@@ -10,6 +10,9 @@
 		F8C2B33A2196E02A00D42440 /* ZAPFoundationUIKitUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8C2B3302196E02A00D42440 /* ZAPFoundationUIKitUtilities.framework */; };
 		F8C2B33F2196E02A00D42440 /* ZAPFoundationUIKitUtilitiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C2B33E2196E02A00D42440 /* ZAPFoundationUIKitUtilitiesTests.swift */; };
 		F8C2B3412196E02A00D42440 /* ZAPFoundationUIKitUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = F8C2B3332196E02A00D42440 /* ZAPFoundationUIKitUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F8C2B34D2196E0C900D42440 /* StringUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C2B34A2196E0C800D42440 /* StringUtilities.swift */; };
+		F8C2B34E2196E0C900D42440 /* NSRegularExpressionUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C2B34B2196E0C800D42440 /* NSRegularExpressionUtilities.swift */; };
+		F8C2B34F2196E0C900D42440 /* URLUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C2B34C2196E0C800D42440 /* URLUtilities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +32,9 @@
 		F8C2B3392196E02A00D42440 /* ZAPFoundationUIKitUtilitiesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZAPFoundationUIKitUtilitiesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8C2B33E2196E02A00D42440 /* ZAPFoundationUIKitUtilitiesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZAPFoundationUIKitUtilitiesTests.swift; sourceTree = "<group>"; };
 		F8C2B3402196E02A00D42440 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F8C2B34A2196E0C800D42440 /* StringUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringUtilities.swift; sourceTree = "<group>"; };
+		F8C2B34B2196E0C800D42440 /* NSRegularExpressionUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSRegularExpressionUtilities.swift; sourceTree = "<group>"; };
+		F8C2B34C2196E0C800D42440 /* URLUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLUtilities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +79,9 @@
 			children = (
 				F8C2B3332196E02A00D42440 /* ZAPFoundationUIKitUtilities.h */,
 				F8C2B3342196E02A00D42440 /* Info.plist */,
+				F8C2B34B2196E0C800D42440 /* NSRegularExpressionUtilities.swift */,
+				F8C2B34A2196E0C800D42440 /* StringUtilities.swift */,
+				F8C2B34C2196E0C800D42440 /* URLUtilities.swift */,
 			);
 			path = ZAPFoundationUIKitUtilities;
 			sourceTree = "<group>";
@@ -148,6 +157,7 @@
 				TargetAttributes = {
 					F8C2B32F2196E02A00D42440 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 					F8C2B3382196E02A00D42440 = {
 						CreatedOnToolsVersion = 10.1;
@@ -194,6 +204,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8C2B34F2196E0C900D42440 /* URLUtilities.swift in Sources */,
+				F8C2B34E2196E0C900D42440 /* NSRegularExpressionUtilities.swift in Sources */,
+				F8C2B34D2196E0C900D42440 /* StringUtilities.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,6 +354,7 @@
 		F8C2B3452196E02A00D42440 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -358,6 +372,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ch.zoziapps.ZAPFoundationUIKitUtilities;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -366,6 +381,7 @@
 		F8C2B3462196E02A00D42440 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -391,6 +407,7 @@
 		F8C2B3482196E02A00D42440 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3X3L9Z8E6B;
 				INFOPLIST_FILE = ZAPFoundationUIKitUtilitiesTests/Info.plist;
@@ -409,6 +426,7 @@
 		F8C2B3492196E02A00D42440 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3X3L9Z8E6B;
 				INFOPLIST_FILE = ZAPFoundationUIKitUtilitiesTests/Info.plist;
