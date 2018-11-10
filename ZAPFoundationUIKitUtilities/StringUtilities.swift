@@ -17,6 +17,7 @@ extension String {
         return string3
     }
     
+    /// Adapted from here: https://stackoverflow.com/a/30141700/568157:
     /// Returns a new string made by replacing in the `String`
     /// all HTML character entity references with the corresponding
     /// character.
