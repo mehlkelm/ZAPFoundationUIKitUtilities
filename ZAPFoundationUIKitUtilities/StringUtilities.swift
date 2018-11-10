@@ -10,6 +10,28 @@ import Foundation
 
 extension String {
     
+    public var isEmailAddress: Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailTest.evaluate(with: self)
+    }
+    
+    public func URLPathEncoded() -> String {
+        return addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? self as String
+    }
+    
+    public func URLQueryEncoded() -> String {
+        return addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? self as String
+    }
+    
+    public func URLFragmentEncoded() -> String {
+        return addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed) ?? self as String
+    }
+    
+    public func URLHostEncoded() -> String {
+        return addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? self as String
+    }
+    
     public func removingTooMuchWhiteSpace() -> String {
         let string1 = self.replacingOccurrences(of: "[\\s\\r\\n]*[\\r\\n]+[\\s\\r\\n]*", with: "\n", options: .regularExpression, range: self.startIndex..<self.endIndex)
         let string2 = string1.replacingOccurrences(of: "\\s{2,0}", with: " ", options: .regularExpression, range: self.startIndex..<self.endIndex)
