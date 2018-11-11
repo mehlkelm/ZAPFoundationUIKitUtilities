@@ -10,13 +10,19 @@ import UIKit
 
 open class ZAPStaticTableViewController: UITableViewController {
     
-    struct Section {
+    public struct Section {
         var headerTitle: String?
         var footerTitle: String?
         var rows = [Row]()
+        
+        public init(rows: [Row], headerTitle header: String? = nil, footerTitle footer: String? = nil) {
+            self.rows = rows
+            headerTitle = header
+            footerTitle = footer
+        }
     }
     
-    struct Row {
+    public struct Row {
         var shouldHighlight: Bool = true
         var cell: ((IndexPath) -> (UITableViewCell))
         var selectionAction: ((IndexPath) -> (Void))?
@@ -27,7 +33,7 @@ open class ZAPStaticTableViewController: UITableViewController {
         var commitEdit: ((UITableViewCell.EditingStyle, IndexPath) -> (Void))?
     }
     
-    var sections = [Section]()
+    public var sections = [Section]()
     
     // MARK: - Table view data source
     
@@ -88,7 +94,7 @@ open class ZAPStaticTableViewController: UITableViewController {
 }
 
 extension ZAPStaticTableViewController.Row {
-    init(cell: @escaping ((IndexPath) -> (UITableViewCell)), selectionAction: ((IndexPath) -> (Void))?) {
+    public init(cell: @escaping ((IndexPath) -> (UITableViewCell)), selectionAction: ((IndexPath) -> (Void))?) {
         self.cell = cell
         self.selectionAction = selectionAction
     }
