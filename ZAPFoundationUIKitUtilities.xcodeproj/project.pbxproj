@@ -14,6 +14,7 @@
 		F8C2B34E2196E0C900D42440 /* NSRegularExpressionUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C2B34B2196E0C800D42440 /* NSRegularExpressionUtilities.swift */; };
 		F8C2B34F2196E0C900D42440 /* URLUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C2B34C2196E0C800D42440 /* URLUtilities.swift */; };
 		F8C2B35B2197042900D42440 /* ZAPStaticTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C2B35A2197042900D42440 /* ZAPStaticTableViewController.swift */; };
+		F8C2B3732198C50200D42440 /* DateUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C2B3722198C50200D42440 /* DateUtilities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +38,7 @@
 		F8C2B34B2196E0C800D42440 /* NSRegularExpressionUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSRegularExpressionUtilities.swift; sourceTree = "<group>"; };
 		F8C2B34C2196E0C800D42440 /* URLUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLUtilities.swift; sourceTree = "<group>"; };
 		F8C2B35A2197042900D42440 /* ZAPStaticTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZAPStaticTableViewController.swift; sourceTree = "<group>"; };
+		F8C2B3722198C50200D42440 /* DateUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtilities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				F8C2B34A2196E0C800D42440 /* StringUtilities.swift */,
 				F8C2B34C2196E0C800D42440 /* URLUtilities.swift */,
 				F8C2B35A2197042900D42440 /* ZAPStaticTableViewController.swift */,
+				F8C2B3722198C50200D42440 /* DateUtilities.swift */,
 			);
 			path = ZAPFoundationUIKitUtilities;
 			sourceTree = "<group>";
@@ -210,6 +213,7 @@
 				F8C2B34F2196E0C900D42440 /* URLUtilities.swift in Sources */,
 				F8C2B34E2196E0C900D42440 /* NSRegularExpressionUtilities.swift in Sources */,
 				F8C2B34D2196E0C900D42440 /* StringUtilities.swift in Sources */,
+				F8C2B3732198C50200D42440 /* DateUtilities.swift in Sources */,
 				F8C2B35B2197042900D42440 /* ZAPStaticTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
