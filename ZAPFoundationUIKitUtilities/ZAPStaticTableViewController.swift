@@ -23,14 +23,33 @@ open class ZAPStaticTableViewController: UITableViewController {
     }
     
     public struct Row {
-        var shouldHighlight: Bool = true
         var cell: ((IndexPath) -> (UITableViewCell))
         var selectionAction: ((IndexPath) -> (Void))?
+        var shouldHighlight: Bool = true
         var height: CGFloat = UITableView.automaticDimension
         var estimatedHeight: CGFloat = UITableView.automaticDimension
         var indentationLevel: Int = 0
         var editable: Bool = false
         var commitEdit: ((UITableViewCell.EditingStyle, IndexPath) -> (Void))?
+        
+        public init(cell: @escaping ((IndexPath) -> (UITableViewCell)),
+             selectionAction: ((IndexPath) -> (Void))? = nil,
+             shouldHighlight: Bool = true,
+             height: CGFloat = UITableView.automaticDimension,
+             estimatedHeight: CGFloat = UITableView.automaticDimension,
+             indentationLevel: Int = 0,
+             editable: Bool = false,
+             commitEdit: ((UITableViewCell.EditingStyle, IndexPath) -> (Void))? = nil) {
+            
+            self.cell = cell
+            self.selectionAction = selectionAction
+            self.shouldHighlight = shouldHighlight
+            self.height = height
+            self.estimatedHeight = estimatedHeight
+            self.indentationLevel = indentationLevel
+            self.editable = editable
+            self.commitEdit = commitEdit
+        }
     }
     
     public var sections = [Section]()
