@@ -10,7 +10,7 @@ import Foundation
 
 extension Date {
     
-    static var secondsInADay: TimeInterval = 24 * 60 * 60
+    public static var secondsInADay: TimeInterval = 24 * 60 * 60
     
     public static func daysAgo(_ days: Double) -> Date {
         return Date(timeIntervalSinceNow: -days * secondsInADay)
