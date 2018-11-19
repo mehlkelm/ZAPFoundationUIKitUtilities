@@ -23,18 +23,20 @@ open class ZAPStaticTableViewController: UITableViewController {
     }
     
     public struct Row {
-        var cell: ((IndexPath) -> (UITableViewCell))
-        var selectionAction: ((IndexPath) -> (Void))?
-        var shouldHighlight: Bool = true
-        var height: CGFloat = UITableView.automaticDimension
-        var estimatedHeight: CGFloat = UITableView.automaticDimension
-        var indentationLevel: Int = 0
-        var editable: Bool = false
-        var commitEdit: ((UITableViewCell.EditingStyle, IndexPath) -> (Void))?
+        public var cell: ((IndexPath) -> (UITableViewCell))
+        public var selectionAction: ((IndexPath) -> (Void))?
+        public var shouldHighlight: Bool = true
+        public var associatedObject: Any? = nil
+        public var height: CGFloat = UITableView.automaticDimension
+        public var estimatedHeight: CGFloat = UITableView.automaticDimension
+        public var indentationLevel: Int = 0
+        public var editable: Bool = false
+        public var commitEdit: ((UITableViewCell.EditingStyle, IndexPath) -> (Void))?
         
         public init(cell: @escaping ((IndexPath) -> (UITableViewCell)),
              selectionAction: ((IndexPath) -> (Void))? = nil,
              shouldHighlight: Bool = true,
+             associatedObject: Any? = nil,
              height: CGFloat = UITableView.automaticDimension,
              estimatedHeight: CGFloat = UITableView.automaticDimension,
              indentationLevel: Int = 0,
@@ -44,6 +46,7 @@ open class ZAPStaticTableViewController: UITableViewController {
             self.cell = cell
             self.selectionAction = selectionAction
             self.shouldHighlight = shouldHighlight
+            self.associatedObject = associatedObject
             self.height = height
             self.estimatedHeight = estimatedHeight
             self.indentationLevel = indentationLevel
@@ -56,7 +59,7 @@ open class ZAPStaticTableViewController: UITableViewController {
     
     // MARK: - Table view data source
     
-    func row(for indexPath: IndexPath) -> Row {
+    public func row(for indexPath: IndexPath) -> Row {
         return sections[indexPath.section].rows[indexPath.row]
     }
     
@@ -110,11 +113,4 @@ open class ZAPStaticTableViewController: UITableViewController {
         row(for: indexPath).selectionAction?(indexPath)
     }
     
-}
-
-extension ZAPStaticTableViewController.Row {
-    public init(cell: @escaping ((IndexPath) -> (UITableViewCell)), selectionAction: ((IndexPath) -> (Void))?) {
-        self.cell = cell
-        self.selectionAction = selectionAction
-    }
 }
