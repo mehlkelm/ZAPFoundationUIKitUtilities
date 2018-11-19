@@ -32,6 +32,7 @@ open class ZAPStaticTableViewController: UITableViewController {
         public var indentationLevel: Int = 0
         public var editable: Bool = false
         public var commitEdit: ((UITableViewCell.EditingStyle, IndexPath) -> (Void))?
+        public var seguePreparation: ((UIStoryboardSegue, _ sender: Any?, IndexPath) -> Void)?
         
         public init(cell: @escaping ((IndexPath) -> (UITableViewCell)),
              selectionAction: ((IndexPath) -> (Void))? = nil,
@@ -41,7 +42,9 @@ open class ZAPStaticTableViewController: UITableViewController {
              estimatedHeight: CGFloat = UITableView.automaticDimension,
              indentationLevel: Int = 0,
              editable: Bool = false,
-             commitEdit: ((UITableViewCell.EditingStyle, IndexPath) -> (Void))? = nil) {
+             commitEdit: ((UITableViewCell.EditingStyle, IndexPath) -> (Void))? = nil,
+             seguePreparation: ((UIStoryboardSegue, _ sender: Any?, IndexPath) -> Void)? = nil
+            ) {
             
             self.cell = cell
             self.selectionAction = selectionAction
@@ -52,10 +55,17 @@ open class ZAPStaticTableViewController: UITableViewController {
             self.indentationLevel = indentationLevel
             self.editable = editable
             self.commitEdit = commitEdit
+            self.seguePreparation = seguePreparation
         }
     }
     
     public var sections = [Section]()
+    
+    open override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let indexPath = tableView.indexPathForSelectedRow {
+            row(for: indexPath).seguePreparation?(segue, sender, indexPath)
+        }
+    }
     
     // MARK: - Table view data source
     
