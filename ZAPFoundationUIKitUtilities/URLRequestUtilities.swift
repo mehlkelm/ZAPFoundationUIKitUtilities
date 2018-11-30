@@ -39,4 +39,10 @@ extension URLRequest {
             NotificationCenter.default.postZAPError(object: self, description: "Could not set JSON Body!", error: error)
         }
     }
+    
+    public mutating func setURLEncodedFormString(string: String) {
+        self.httpBody = string.data(using: .utf8)
+        self.setContent(type: .formURLEncoded)
+        self.httpMethod = "POST"
+    }
 }
