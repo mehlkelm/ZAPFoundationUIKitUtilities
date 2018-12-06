@@ -32,6 +32,11 @@ extension String {
         return addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? self as String
     }
     
+    public func HTMLRemoved() -> String? {
+        let attributedString = NSAttributedString(HTMLString: self)?.trailingNewlineChopped()
+        return attributedString?.string
+    }
+    
     public func removingTooMuchWhiteSpace() -> String {
         let string1 = self.replacingOccurrences(of: "[\\s\\r\\n]*[\\r\\n]+[\\s\\r\\n]*", with: "\n", options: .regularExpression, range: self.startIndex..<self.endIndex)
         let string2 = string1.replacingOccurrences(of: "\\s{2,0}", with: " ", options: .regularExpression, range: self.startIndex..<self.endIndex)
