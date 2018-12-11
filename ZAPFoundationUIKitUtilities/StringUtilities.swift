@@ -37,6 +37,11 @@ extension String {
         return attributedString?.string
     }
     
+    public func imgTagsRemoved() -> String {
+        let string1 = self.replacingOccurrences(of: "(<p>)?<img[^>]*>(</p>)?", with: "", options: .regularExpression, range: self.startIndex..<self.endIndex)
+        return string1
+    }
+    
     public func removingTooMuchWhiteSpace() -> String {
         let string1 = self.replacingOccurrences(of: "[\\s\\r\\n]*[\\r\\n]+[\\s\\r\\n]*", with: "\n", options: .regularExpression, range: self.startIndex..<self.endIndex)
         let string2 = string1.replacingOccurrences(of: "\\s{2,0}", with: " ", options: .regularExpression, range: self.startIndex..<self.endIndex)
