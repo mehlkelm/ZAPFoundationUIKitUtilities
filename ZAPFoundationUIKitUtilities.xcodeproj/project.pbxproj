@@ -16,6 +16,7 @@
 		F8C2B34F2196E0C900D42440 /* URLUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C2B34C2196E0C800D42440 /* URLUtilities.swift */; };
 		F8C2B35B2197042900D42440 /* ZAPStaticTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C2B35A2197042900D42440 /* ZAPStaticTableViewController.swift */; };
 		F8C2B3732198C50200D42440 /* DateUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C2B3722198C50200D42440 /* DateUtilities.swift */; };
+		F8C56CD621C26C7000F1921E /* BundleUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C56CD521C26C7000F1921E /* BundleUtilities.swift */; };
 		F8FB3687219B50A3003E02B1 /* URLRequestUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FB3686219B50A3003E02B1 /* URLRequestUtilities.swift */; };
 		F8FB3689219B5C06003E02B1 /* NotificationCenterUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FB3688219B5C06003E02B1 /* NotificationCenterUtilities.swift */; };
 /* End PBXBuildFile section */
@@ -43,6 +44,7 @@
 		F8C2B34C2196E0C800D42440 /* URLUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLUtilities.swift; sourceTree = "<group>"; };
 		F8C2B35A2197042900D42440 /* ZAPStaticTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZAPStaticTableViewController.swift; sourceTree = "<group>"; };
 		F8C2B3722198C50200D42440 /* DateUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtilities.swift; sourceTree = "<group>"; };
+		F8C56CD521C26C7000F1921E /* BundleUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleUtilities.swift; sourceTree = "<group>"; };
 		F8FB3686219B50A3003E02B1 /* URLRequestUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestUtilities.swift; sourceTree = "<group>"; };
 		F8FB3688219B5C06003E02B1 /* NotificationCenterUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenterUtilities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -97,6 +99,7 @@
 				F8C2B3722198C50200D42440 /* DateUtilities.swift */,
 				F8FB3686219B50A3003E02B1 /* URLRequestUtilities.swift */,
 				F8FB3688219B5C06003E02B1 /* NotificationCenterUtilities.swift */,
+				F8C56CD521C26C7000F1921E /* BundleUtilities.swift */,
 			);
 			path = ZAPFoundationUIKitUtilities;
 			sourceTree = "<group>";
@@ -223,6 +226,7 @@
 				F8C2B34F2196E0C900D42440 /* URLUtilities.swift in Sources */,
 				F8C2B34E2196E0C900D42440 /* NSRegularExpressionUtilities.swift in Sources */,
 				F8FB3689219B5C06003E02B1 /* NotificationCenterUtilities.swift in Sources */,
+				F8C56CD621C26C7000F1921E /* BundleUtilities.swift in Sources */,
 				F8FB3687219B50A3003E02B1 /* URLRequestUtilities.swift in Sources */,
 				F8C2B34D2196E0C900D42440 /* StringUtilities.swift in Sources */,
 				F8C2B3732198C50200D42440 /* DateUtilities.swift in Sources */,
