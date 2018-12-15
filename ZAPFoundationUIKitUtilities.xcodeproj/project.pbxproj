@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F80A856221C50B1000B5771B /* WKWebViewUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80A856121C50B1000B5771B /* WKWebViewUtilities.swift */; };
+		F80A856821C5B0F500B5771B /* UIBarButtonItemUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80A856721C5B0F500B5771B /* UIBarButtonItemUtilities.swift */; };
 		F8B215E921B959B3002B6210 /* NSAttributedStringUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B215E821B959B3002B6210 /* NSAttributedStringUtilities.swift */; };
 		F8C2B33A2196E02A00D42440 /* ZAPFoundationUIKitUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8C2B3302196E02A00D42440 /* ZAPFoundationUIKitUtilities.framework */; };
 		F8C2B33F2196E02A00D42440 /* ZAPFoundationUIKitUtilitiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C2B33E2196E02A00D42440 /* ZAPFoundationUIKitUtilitiesTests.swift */; };
@@ -34,6 +35,7 @@
 
 /* Begin PBXFileReference section */
 		F80A856121C50B1000B5771B /* WKWebViewUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKWebViewUtilities.swift; sourceTree = "<group>"; };
+		F80A856721C5B0F500B5771B /* UIBarButtonItemUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBarButtonItemUtilities.swift; sourceTree = "<group>"; };
 		F8B215E821B959B3002B6210 /* NSAttributedStringUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAttributedStringUtilities.swift; sourceTree = "<group>"; };
 		F8C2B3302196E02A00D42440 /* ZAPFoundationUIKitUtilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ZAPFoundationUIKitUtilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8C2B3332196E02A00D42440 /* ZAPFoundationUIKitUtilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZAPFoundationUIKitUtilities.h; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				F8FB3688219B5C06003E02B1 /* NotificationCenterUtilities.swift */,
 				F8C56CD521C26C7000F1921E /* BundleUtilities.swift */,
 				F80A856121C50B1000B5771B /* WKWebViewUtilities.swift */,
+				F80A856721C5B0F500B5771B /* UIBarButtonItemUtilities.swift */,
 			);
 			path = ZAPFoundationUIKitUtilities;
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 				F8FB3689219B5C06003E02B1 /* NotificationCenterUtilities.swift in Sources */,
 				F8C56CD621C26C7000F1921E /* BundleUtilities.swift in Sources */,
 				F8FB3687219B50A3003E02B1 /* URLRequestUtilities.swift in Sources */,
+				F80A856821C5B0F500B5771B /* UIBarButtonItemUtilities.swift in Sources */,
 				F8C2B34D2196E0C900D42440 /* StringUtilities.swift in Sources */,
 				F8C2B3732198C50200D42440 /* DateUtilities.swift in Sources */,
 				F80A856221C50B1000B5771B /* WKWebViewUtilities.swift in Sources */,
