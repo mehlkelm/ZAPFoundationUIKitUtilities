@@ -11,9 +11,9 @@ import UIKit
 open class ZAPStaticTableViewController: UITableViewController {
     
     public struct Section {
-        var headerTitle: String?
-        var footerTitle: String?
-        var rows = [Row]()
+        public var headerTitle: String?
+        public var footerTitle: String?
+        public var rows = [Row]()
         
         public init(rows: [Row], headerTitle header: String? = nil, footerTitle footer: String? = nil) {
             self.rows = rows
