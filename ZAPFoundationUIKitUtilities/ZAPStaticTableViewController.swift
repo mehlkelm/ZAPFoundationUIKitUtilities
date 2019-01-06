@@ -33,6 +33,7 @@ open class ZAPStaticTableViewController: UITableViewController {
         public var editable: Bool = false
         public var commitEdit: ((UITableViewCell.EditingStyle, IndexPath) -> (Void))?
         public var seguePreparation: ((UIStoryboardSegue, _ sender: Any?, IndexPath) -> Void)?
+        public var ID: String? = nil
         
         public init(cell: @escaping ((IndexPath) -> (UITableViewCell)),
              selectionAction: ((IndexPath) -> (Void))? = nil,
@@ -43,7 +44,8 @@ open class ZAPStaticTableViewController: UITableViewController {
              indentationLevel: Int = 0,
              editable: Bool = false,
              commitEdit: ((UITableViewCell.EditingStyle, IndexPath) -> (Void))? = nil,
-             seguePreparation: ((UIStoryboardSegue, _ sender: Any?, IndexPath) -> Void)? = nil
+             seguePreparation: ((UIStoryboardSegue, _ sender: Any?, IndexPath) -> Void)? = nil,
+             ID: String? = nil
             ) {
             
             self.cell = cell
@@ -56,6 +58,7 @@ open class ZAPStaticTableViewController: UITableViewController {
             self.editable = editable
             self.commitEdit = commitEdit
             self.seguePreparation = seguePreparation
+            self.ID = ID
         }
     }
     
