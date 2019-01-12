@@ -10,14 +10,20 @@ import Foundation
 
 extension NSRegularExpression {
     
-    public func firstMatch(in string: String, options: NSRegularExpression.MatchingOptions = []) -> NSTextCheckingResult? {
+    public func firstMatch(in string: String?, options: NSRegularExpression.MatchingOptions = []) -> NSTextCheckingResult? {
         
+        guard let string = string else {
+            return nil
+        }
         let nsRange = NSRange(location: 0, length: string.count)
         return firstMatch(in: string, options: options, range: nsRange)
     }
     
-    public func matches(in string: String, options: NSRegularExpression.MatchingOptions = []) -> [NSTextCheckingResult] {
+    public func matches(in string: String?, options: NSRegularExpression.MatchingOptions = []) -> [NSTextCheckingResult] {
         
+        guard let string = string else {
+            return [NSTextCheckingResult]()
+        }
         let nsRange = NSRange(location: 0, length: string.count)
         return matches(in: string, options: options, range: nsRange)
     }
@@ -31,8 +37,11 @@ extension NSTextCheckingResult {
         return Range<String.Index>(nsRange, in:string)
     }
     
-    public func string(at idx: Int, in string: String) -> String? {
-        
+    public func string(at idx: Int, in string: String?) -> String? {
+        guard let string = string else {
+            NotificationCenter.default.postZAPError(object: self, description: "No string to extract from!")
+            return nil
+        }
         guard let range = self.range(at: idx, in: string) else {
             NotificationCenter.default.postZAPError(object: self, description: "Could not extract string from text checking result!")
             return nil
