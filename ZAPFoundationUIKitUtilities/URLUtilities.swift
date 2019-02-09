@@ -9,6 +9,30 @@
 import Foundation
 
 extension URL {
+    static let adServerDomains: [String] = {
+        // The list is from http://pgl.yoyo.org/as/
+        guard let filePath = Bundle.main.path(forResource: "ad_server_domains", ofType: "txt") else {
+            print("Could not read ad server domains!")
+            return [String]()
+        }
+        
+        guard let string: String = try? String(contentsOfFile: filePath) else {
+            print("Could not read ad server domains!")
+            return [String]()
+        }
+        
+        var items = string.components(separatedBy: "\n")
+        items.append(contentsOf: ["feeds.wordpress.com", "feeds.feedburner.com", "feedads.doubleclick.net", "feedsportal.com", "syndicateads.net"])
+        
+        return items;
+    }()
+    
+    public var hasAdDomain: Bool {
+        guard let letHost = host else {
+            return false
+        }
+        return URL.adServerDomains.contains(letHost)
+    }
     
     public init?(HTTPURLWith string: String, relativeTo baseURL: URL?) {
         var correctedString = string
