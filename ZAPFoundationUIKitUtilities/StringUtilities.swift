@@ -31,12 +31,7 @@ extension String {
     public func URLHostEncoded() -> String {
         return addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? self as String
     }
-    
-    public func HTMLRemoved() -> String? {
-        let attributedString = NSAttributedString(HTMLString: self)?.trailingNewlineChopped()
-        return attributedString?.string
-    }
-    
+        
     public func imgTagsRemoved() -> String {
         let string1 = self.replacingOccurrences(of: "(<p>)?<img[^>]*>(</p>)?", with: "", options: .regularExpression, range: self.startIndex..<self.endIndex)
         return string1
