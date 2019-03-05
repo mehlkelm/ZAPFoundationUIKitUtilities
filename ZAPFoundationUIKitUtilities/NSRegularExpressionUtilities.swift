@@ -11,7 +11,6 @@ import Foundation
 extension NSRegularExpression {
     
     public func firstMatch(in string: String?, options: NSRegularExpression.MatchingOptions = []) -> NSTextCheckingResult? {
-        
         guard let string = string else {
             return nil
         }
@@ -20,7 +19,6 @@ extension NSRegularExpression {
     }
     
     public func matches(in string: String?, options: NSRegularExpression.MatchingOptions = []) -> [NSTextCheckingResult] {
-        
         guard let string = string else {
             return [NSTextCheckingResult]()
         }
@@ -32,7 +30,6 @@ extension NSRegularExpression {
 extension NSTextCheckingResult {
     
     public func range(at idx: Int, in string: String) -> Range<String.Index>? {
-        
         let nsRange = range(at: idx)
         return Range<String.Index>(nsRange, in:string)
     }

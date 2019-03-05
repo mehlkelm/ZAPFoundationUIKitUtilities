@@ -39,8 +39,8 @@ extension String {
     
     public func removingTooMuchWhiteSpace() -> String {
         let string1 = self.replacingOccurrences(of: "[\\s\\r\\n]*[\\r\\n]+[\\s\\r\\n]*", with: "\n", options: .regularExpression, range: self.startIndex..<self.endIndex)
-        let string2 = string1.replacingOccurrences(of: "\\s{2,0}", with: " ", options: .regularExpression, range: self.startIndex..<self.endIndex)
-        let string3 = string2.replacingOccurrences(of: "(^\\s+)|(\\s+$)", with: "", options: .regularExpression, range: self.startIndex..<self.endIndex)
+        let string2 = string1.replacingOccurrences(of: "\\s{2,0}", with: " ", options: .regularExpression, range: string1.startIndex..<string1.endIndex)
+        let string3 = string2.replacingOccurrences(of: "(^\\s+)|(\\s+$)", with: "", options: .regularExpression, range: string2.startIndex..<string2.endIndex)
         return string3
     }
     
