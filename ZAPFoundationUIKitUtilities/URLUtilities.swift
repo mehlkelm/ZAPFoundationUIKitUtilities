@@ -9,9 +9,14 @@
 import Foundation
 
 extension URL {
+    
     static let adServerDomains: [String] = {
+        // This stupid helper class seems to be the safest way to get the framework bundle
+        class BundleDetector {}
+        let bundle = Bundle(for: BundleDetector.self)
+        
         // The list is from http://pgl.yoyo.org/as/
-        guard let filePath = Bundle.main.path(forResource: "ad_server_domains", ofType: "txt") else {
+        guard let filePath = bundle.path(forResource: "ad_server_domains", ofType: "txt") else {
             print("Could not read ad server domains!")
             return [String]()
         }
@@ -22,7 +27,7 @@ extension URL {
         }
         
         var items = string.components(separatedBy: "\n")
-        items.append(contentsOf: ["feeds.wordpress.com", "feeds.feedburner.com", "feedads.doubleclick.net", "feedsportal.com", "syndicateads.net"])
+        items.append(contentsOf: ["feeds.wordpress.com", "feeds.feedburner.com", "feedads.doubleclick.net", "feedsportal.com", "syndicateads.net", "images-na.ssl-images-amazon.com"])
         
         return items;
     }()
