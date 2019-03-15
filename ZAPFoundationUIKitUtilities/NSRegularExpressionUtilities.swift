@@ -36,11 +36,11 @@ extension NSTextCheckingResult {
     
     public func string(at idx: Int, in string: String?) -> String? {
         guard let string = string else {
-            NotificationCenter.default.postZAPError(object: self, description: "No string to extract from!")
+            print("No string to extract from!")
             return nil
         }
         guard let range = self.range(at: idx, in: string) else {
-            NotificationCenter.default.postZAPError(object: self, description: "Could not extract string from text checking result!")
+            print("Could not extract string from text checking result!")
             return nil
         }
         return String(string[range])

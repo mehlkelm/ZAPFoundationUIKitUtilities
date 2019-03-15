@@ -36,7 +36,7 @@ extension URLRequest {
             self.setContent(type: .JSON)
             self.httpMethod = "POST"
         } catch {
-            NotificationCenter.default.postZAPError(object: self, description: "Could not set JSON Body!", error: error)
+            NotificationCenter.default.postZAPError(object: self, title: "Could not set JSON Body!", error: error)
         }
     }
     

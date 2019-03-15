@@ -8,23 +8,25 @@
 
 import UIKit
 
+extension Notification.Name {
+    public static let ZAPError: NSNotification.Name = Notification.Name("ZAPError")
+}
+
 extension NotificationCenter {
-    
-    var errorNotificationName: Notification.Name {
-        return Notification.Name("ZAPErrorNotification")
-    }
-    
-    public func postZAPError(object: Any?, description: String, error: Error? = nil, userInfo: [AnyHashable : Any]? = nil) {
-        
-        var info = userInfo ?? [AnyHashable: Any]()
+    public func postZAPError(object: Any?, title: String?, description: String) {
+        var info = [AnyHashable: Any]()
         info["description"] = description
-        info["error"] = error
-        
-        let notification = Notification(name: errorNotificationName, object: object, userInfo: info)
+        info["title"] = title
+        let notification = Notification(name: .ZAPError, object: object, userInfo: info)
         print(notification)
         
         DispatchQueue.main.async {
             self.post(notification)
         }
     }
+    
+    public func postZAPError(object: Any?, title: String?, error: Error) {
+        postZAPError(object: object, title: title, description: error.localizedDescription)
+    }
 }
+
