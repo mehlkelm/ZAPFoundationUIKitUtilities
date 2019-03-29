@@ -8,59 +8,59 @@
 
 import UIKit
 
+public struct Section {
+    public var headerTitle: String?
+    public var footerTitle: String?
+    public var rows = [Row]()
+    
+    public init(rows: [Row], headerTitle header: String? = nil, footerTitle footer: String? = nil) {
+        self.rows = rows
+        headerTitle = header
+        footerTitle = footer
+    }
+}
+
+public struct Row {
+    public var cell: ((IndexPath) -> (UITableViewCell))
+    public var selectionAction: ((IndexPath) -> (Void))?
+    public var shouldHighlight: Bool = true
+    public var associatedObject: Any? = nil
+    public var height: CGFloat = UITableView.automaticDimension
+    public var estimatedHeight: CGFloat = UITableView.automaticDimension
+    public var indentationLevel: Int = 0
+    public var editable: Bool = false
+    public var commitEdit: ((UITableViewCell.EditingStyle, IndexPath) -> (Void))?
+    public var seguePreparation: ((UIStoryboardSegue, _ sender: Any?, IndexPath) -> Void)?
+    public var ID: String? = nil
+    
+    public init(cell: @escaping ((IndexPath) -> (UITableViewCell)),
+                selectionAction: ((IndexPath) -> (Void))? = nil,
+                shouldHighlight: Bool = true,
+                associatedObject: Any? = nil,
+                height: CGFloat = UITableView.automaticDimension,
+                estimatedHeight: CGFloat = UITableView.automaticDimension,
+                indentationLevel: Int = 0,
+                editable: Bool = false,
+                commitEdit: ((UITableViewCell.EditingStyle, IndexPath) -> (Void))? = nil,
+                seguePreparation: ((UIStoryboardSegue, _ sender: Any?, IndexPath) -> Void)? = nil,
+                ID: String? = nil
+        ) {
+        
+        self.cell = cell
+        self.selectionAction = selectionAction
+        self.shouldHighlight = shouldHighlight
+        self.associatedObject = associatedObject
+        self.height = height
+        self.estimatedHeight = estimatedHeight
+        self.indentationLevel = indentationLevel
+        self.editable = editable
+        self.commitEdit = commitEdit
+        self.seguePreparation = seguePreparation
+        self.ID = ID
+    }
+}
+
 open class ZAPStaticTableViewController: UITableViewController {
-    
-    public struct Section {
-        public var headerTitle: String?
-        public var footerTitle: String?
-        public var rows = [Row]()
-        
-        public init(rows: [Row], headerTitle header: String? = nil, footerTitle footer: String? = nil) {
-            self.rows = rows
-            headerTitle = header
-            footerTitle = footer
-        }
-    }
-    
-    public struct Row {
-        public var cell: ((IndexPath) -> (UITableViewCell))
-        public var selectionAction: ((IndexPath) -> (Void))?
-        public var shouldHighlight: Bool = true
-        public var associatedObject: Any? = nil
-        public var height: CGFloat = UITableView.automaticDimension
-        public var estimatedHeight: CGFloat = UITableView.automaticDimension
-        public var indentationLevel: Int = 0
-        public var editable: Bool = false
-        public var commitEdit: ((UITableViewCell.EditingStyle, IndexPath) -> (Void))?
-        public var seguePreparation: ((UIStoryboardSegue, _ sender: Any?, IndexPath) -> Void)?
-        public var ID: String? = nil
-        
-        public init(cell: @escaping ((IndexPath) -> (UITableViewCell)),
-             selectionAction: ((IndexPath) -> (Void))? = nil,
-             shouldHighlight: Bool = true,
-             associatedObject: Any? = nil,
-             height: CGFloat = UITableView.automaticDimension,
-             estimatedHeight: CGFloat = UITableView.automaticDimension,
-             indentationLevel: Int = 0,
-             editable: Bool = false,
-             commitEdit: ((UITableViewCell.EditingStyle, IndexPath) -> (Void))? = nil,
-             seguePreparation: ((UIStoryboardSegue, _ sender: Any?, IndexPath) -> Void)? = nil,
-             ID: String? = nil
-            ) {
-            
-            self.cell = cell
-            self.selectionAction = selectionAction
-            self.shouldHighlight = shouldHighlight
-            self.associatedObject = associatedObject
-            self.height = height
-            self.estimatedHeight = estimatedHeight
-            self.indentationLevel = indentationLevel
-            self.editable = editable
-            self.commitEdit = commitEdit
-            self.seguePreparation = seguePreparation
-            self.ID = ID
-        }
-    }
     
     public var sections = [Section]()
     
@@ -125,5 +125,4 @@ open class ZAPStaticTableViewController: UITableViewController {
     override open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         row(for: indexPath).selectionAction?(indexPath)
     }
-    
 }

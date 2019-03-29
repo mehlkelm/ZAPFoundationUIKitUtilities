@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ZAPStaticDemoController.swift
 //  ZAPStaticTableViewDemo
 //
 //  Created by Stefan Pauwels on 28.03.19.
@@ -9,10 +9,11 @@
 import UIKit
 import ZAPFoundationUIKitUtilities
 
-class ViewController: ZAPStaticTableViewController {
+class ZAPStaticDemoController: ZAPStaticTableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "aDefaultCell")
         
         sections = [
@@ -24,10 +25,10 @@ class ViewController: ZAPStaticTableViewController {
                             let cell = self.tableView.dequeueReusableCell(withIdentifier: "aDefaultCell", for: indexPath)
                             cell.textLabel?.text = "This is a cell!"
                             return cell
-                        },
+                    },
                         selectionAction: { (indexPath) -> (Void) in
                             print("Cell at \(indexPath) has been selected")
-                        },
+                    },
                         shouldHighlight: true,
                         associatedObject: nil,
                         height: 100,
@@ -44,7 +45,7 @@ class ViewController: ZAPStaticTableViewController {
                             let cell = self.tableView.dequeueReusableCell(withIdentifier: "aDefaultCell", for: indexPath)
                             cell.textLabel?.text = "This is another cell!"
                             return cell
-                        }
+                    }
                     )
                 ],
                 headerTitle: "First Section",
@@ -62,6 +63,6 @@ class ViewController: ZAPStaticTableViewController {
                 footerTitle: "This is just to show more than one section."
             )
         ]
+        tableView.reloadData()
     }
 }
-
