@@ -45,7 +45,7 @@ class ZAPStaticDemoController: ZAPStaticTableViewController {
                             let cell = self.tableView.dequeueReusableCell(withIdentifier: "aDefaultCell", for: indexPath)
                             cell.textLabel?.text = "This is another cell!"
                             return cell
-                    }
+                        }
                     )
                 ],
                 headerTitle: "First Section",
@@ -53,11 +53,16 @@ class ZAPStaticDemoController: ZAPStaticTableViewController {
             ),
             Section(
                 rows: [
-                    Row(cell: { (indexPath) -> (UITableViewCell) in
-                        let cell = self.tableView.dequeueReusableCell(withIdentifier: "aDefaultCell", for: indexPath)
-                        cell.textLabel?.text = "kthxby"
-                        return cell
-                    })
+                    Row(
+                        cell: { (indexPath) -> (UITableViewCell) in
+                            let cell = self.tableView.dequeueReusableCell(withIdentifier: "aDefaultCell", for: indexPath)
+                            cell.textLabel?.text = "kthxby"
+                            return cell
+                        },
+                        selectionAction: { (indexPath) -> (Void) in
+                            print("foo bar")
+                        }
+                    )
                 ],
                 headerTitle: "Cool right?",
                 footerTitle: "This is just to show more than one section."
