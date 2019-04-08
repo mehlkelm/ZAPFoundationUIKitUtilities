@@ -8,7 +8,7 @@
 
 import Foundation
 
-public extension NSAttributedString {
+extension NSAttributedString {
     
     @objc public convenience init?(HTMLString: String?) {
         
