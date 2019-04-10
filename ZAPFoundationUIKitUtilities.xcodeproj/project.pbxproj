@@ -251,10 +251,11 @@
 				TargetAttributes = {
 					F8C2B32F2196E02A00D42440 = {
 						CreatedOnToolsVersion = 10.1;
-						LastSwiftMigration = 1010;
+						LastSwiftMigration = 1020;
 					};
 					F8C2B3382196E02A00D42440 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 					F8CD2D2A224CCDA000F01EDE = {
 						CreatedOnToolsVersion = 10.1;
@@ -523,7 +524,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -551,7 +552,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ch.zoziapps.ZAPFoundationUIKitUtilities;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -570,7 +571,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ch.zoziapps.ZAPFoundationUIKitUtilitiesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -589,7 +590,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ch.zoziapps.ZAPFoundationUIKitUtilitiesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
