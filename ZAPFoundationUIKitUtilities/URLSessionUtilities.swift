@@ -20,8 +20,15 @@ extension URLSession {
                     fail(NSError.invalidResponse)
                     return
                 }
+//                if UIDevice.current.isSimulator, let content = String(data: data, encoding: .utf8) {
+//                    print(content)
+//                }
                 guard urlResponse.statusCode < 500 else {
                     fail(NSError.serverError)
+                    return
+                }
+                guard urlResponse.statusCode != 404 else {
+                    fail(NSError.notFound)
                     return
                 }
                 guard urlResponse.statusCode < 400 else {
@@ -70,4 +77,5 @@ extension NSError {
     public static let accessDenied = NSError(domain: "ZAPURLSession", code: 3, userInfo: [NSLocalizedDescriptionKey: "Access denied!"])
     public static let invalidResponse = NSError(domain: "ZAPURLSession", code: 4, userInfo: [NSLocalizedDescriptionKey: "Invalid response from server!"])
     public static let serverError = NSError(domain: "ZAPURLSession", code: 6, userInfo: [NSLocalizedDescriptionKey: "Server error!"])
+    public static let notFound = NSError(domain: "ZAPURLSession", code: 7, userInfo: [NSLocalizedDescriptionKey: "Not found!"])
 }
