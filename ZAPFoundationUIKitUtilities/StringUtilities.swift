@@ -16,6 +16,10 @@ extension String {
         return emailTest.evaluate(with: self)
     }
     
+    public func URLEncoded() -> String {
+        return addingPercentEncoding(withAllowedCharacters: CharacterSet.alphanumerics) ?? self as String
+    }
+    
     public func URLPathEncoded() -> String {
         return addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? self as String
     }
