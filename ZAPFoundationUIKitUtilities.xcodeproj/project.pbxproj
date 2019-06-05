@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F80A856221C50B1000B5771B /* WKWebViewUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80A856121C50B1000B5771B /* WKWebViewUtilities.swift */; };
 		F80A856821C5B0F500B5771B /* UIBarButtonItemUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80A856721C5B0F500B5771B /* UIBarButtonItemUtilities.swift */; };
+		F80B9B6022A4ED1200E4EC88 /* UIImageUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80B9B5F22A4ED1200E4EC88 /* UIImageUtilities.swift */; };
 		F810493C21E6921F00CE6787 /* UIViewControllerUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F810493B21E6921F00CE6787 /* UIViewControllerUtilities.swift */; };
 		F84C9D78227B34EF00ECAC0C /* URLResponseUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84C9D77227B34EF00ECAC0C /* URLResponseUtilities.swift */; };
 		F89D8CCD220EEF4800DE61CA /* ad_server_domains.txt in Resources */ = {isa = PBXBuildFile; fileRef = F89D8CCC220EEF4800DE61CA /* ad_server_domains.txt */; };
@@ -47,6 +48,7 @@
 /* Begin PBXFileReference section */
 		F80A856121C50B1000B5771B /* WKWebViewUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKWebViewUtilities.swift; sourceTree = "<group>"; };
 		F80A856721C5B0F500B5771B /* UIBarButtonItemUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBarButtonItemUtilities.swift; sourceTree = "<group>"; };
+		F80B9B5F22A4ED1200E4EC88 /* UIImageUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageUtilities.swift; sourceTree = "<group>"; };
 		F810493B21E6921F00CE6787 /* UIViewControllerUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerUtilities.swift; sourceTree = "<group>"; };
 		F84C9D77227B34EF00ECAC0C /* URLResponseUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLResponseUtilities.swift; sourceTree = "<group>"; };
 		F89D8CCC220EEF4800DE61CA /* ad_server_domains.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ad_server_domains.txt; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				F8C2B3332196E02A00D42440 /* ZAPFoundationUIKitUtilities.h */,
 				F8C2B35A2197042900D42440 /* ZAPStaticTableViewController.swift */,
 				F8B53B03228933B8005BB95B /* URLSessionUtilities.swift */,
+				F80B9B5F22A4ED1200E4EC88 /* UIImageUtilities.swift */,
 			);
 			path = ZAPFoundationUIKitUtilities;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 				F8C2B3732198C50200D42440 /* DateUtilities.swift in Sources */,
 				F80A856221C50B1000B5771B /* WKWebViewUtilities.swift in Sources */,
 				F84C9D78227B34EF00ECAC0C /* URLResponseUtilities.swift in Sources */,
+				F80B9B6022A4ED1200E4EC88 /* UIImageUtilities.swift in Sources */,
 				F8C2B35B2197042900D42440 /* ZAPStaticTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
