@@ -12,6 +12,7 @@
 		F80B9B6022A4ED1200E4EC88 /* UIImageUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80B9B5F22A4ED1200E4EC88 /* UIImageUtilities.swift */; };
 		F810493C21E6921F00CE6787 /* UIViewControllerUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F810493B21E6921F00CE6787 /* UIViewControllerUtilities.swift */; };
 		F84C9D78227B34EF00ECAC0C /* URLResponseUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84C9D77227B34EF00ECAC0C /* URLResponseUtilities.swift */; };
+		F88852FE22A904DD00B5BE6E /* UIButtonUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88852FD22A904DD00B5BE6E /* UIButtonUtilities.swift */; };
 		F89D8CCD220EEF4800DE61CA /* ad_server_domains.txt in Resources */ = {isa = PBXBuildFile; fileRef = F89D8CCC220EEF4800DE61CA /* ad_server_domains.txt */; };
 		F8B215E921B959B3002B6210 /* NSAttributedStringUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B215E821B959B3002B6210 /* NSAttributedStringUtilities.swift */; };
 		F8B53B04228933B8005BB95B /* URLSessionUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B53B03228933B8005BB95B /* URLSessionUtilities.swift */; };
@@ -51,6 +52,7 @@
 		F80B9B5F22A4ED1200E4EC88 /* UIImageUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageUtilities.swift; sourceTree = "<group>"; };
 		F810493B21E6921F00CE6787 /* UIViewControllerUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerUtilities.swift; sourceTree = "<group>"; };
 		F84C9D77227B34EF00ECAC0C /* URLResponseUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLResponseUtilities.swift; sourceTree = "<group>"; };
+		F88852FD22A904DD00B5BE6E /* UIButtonUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonUtilities.swift; sourceTree = "<group>"; };
 		F89D8CCC220EEF4800DE61CA /* ad_server_domains.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ad_server_domains.txt; sourceTree = "<group>"; };
 		F8B215E821B959B3002B6210 /* NSAttributedStringUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAttributedStringUtilities.swift; sourceTree = "<group>"; };
 		F8B53B03228933B8005BB95B /* URLSessionUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionUtilities.swift; sourceTree = "<group>"; };
@@ -139,15 +141,16 @@
 				F8C2B34B2196E0C800D42440 /* NSRegularExpressionUtilities.swift */,
 				F8C2B34A2196E0C800D42440 /* StringUtilities.swift */,
 				F80A856721C5B0F500B5771B /* UIBarButtonItemUtilities.swift */,
+				F88852FD22A904DD00B5BE6E /* UIButtonUtilities.swift */,
+				F80B9B5F22A4ED1200E4EC88 /* UIImageUtilities.swift */,
 				F810493B21E6921F00CE6787 /* UIViewControllerUtilities.swift */,
 				F8FB3686219B50A3003E02B1 /* URLRequestUtilities.swift */,
 				F84C9D77227B34EF00ECAC0C /* URLResponseUtilities.swift */,
+				F8B53B03228933B8005BB95B /* URLSessionUtilities.swift */,
 				F8C2B34C2196E0C800D42440 /* URLUtilities.swift */,
 				F80A856121C50B1000B5771B /* WKWebViewUtilities.swift */,
 				F8C2B3332196E02A00D42440 /* ZAPFoundationUIKitUtilities.h */,
 				F8C2B35A2197042900D42440 /* ZAPStaticTableViewController.swift */,
-				F8B53B03228933B8005BB95B /* URLSessionUtilities.swift */,
-				F80B9B5F22A4ED1200E4EC88 /* UIImageUtilities.swift */,
 			);
 			path = ZAPFoundationUIKitUtilities;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 				F8B215E921B959B3002B6210 /* NSAttributedStringUtilities.swift in Sources */,
 				F8C2B34F2196E0C900D42440 /* URLUtilities.swift in Sources */,
 				F8E32BAD22572D01000D51E5 /* DeviceUtilities.swift in Sources */,
+				F88852FE22A904DD00B5BE6E /* UIButtonUtilities.swift in Sources */,
 				F8C2B34E2196E0C900D42440 /* NSRegularExpressionUtilities.swift in Sources */,
 				F810493C21E6921F00CE6787 /* UIViewControllerUtilities.swift in Sources */,
 				F8FB3689219B5C06003E02B1 /* NotificationCenterUtilities.swift in Sources */,
