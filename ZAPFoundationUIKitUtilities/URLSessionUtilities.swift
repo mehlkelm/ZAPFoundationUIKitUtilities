@@ -20,6 +20,10 @@ extension URLSession {
                     fail(NSError.invalidResponse)
                     return
                 }
+                if let error = error {
+                    fail(error)
+                    return
+                }
 //                if UIDevice.current.isSimulator, let content = String(data: data, encoding: .utf8) {
 //                    print(content)
 //                }
@@ -37,7 +41,7 @@ extension URLSession {
                 }
                 completion?(data, urlResponse)
             }
-            }.resume()
+        }.resume()
     }
     
     public func execute<kT, vT>(request: URLRequest?, fail: @escaping (Error) -> Void, completion: @escaping ([kT: vT], HTTPURLResponse) -> Void) {
