@@ -32,6 +32,7 @@
 		F8CD2D38224CCDA400F01EDE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8CD2D36224CCDA400F01EDE /* LaunchScreen.storyboard */; };
 		F8CD2D3E224D21E300F01EDE /* ZAPStaticDemoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CD2D3D224D21E300F01EDE /* ZAPStaticDemoController.swift */; };
 		F8CD2D40224D22A800F01EDE /* ZAPFoundationUIKitUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8C2B3302196E02A00D42440 /* ZAPFoundationUIKitUtilities.framework */; };
+		F8CD80BA22B247250025B1A8 /* ZAPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CD80B922B247250025B1A8 /* ZAPError.swift */; };
 		F8E32BAD22572D01000D51E5 /* DeviceUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E32BAC22572D01000D51E5 /* DeviceUtilities.swift */; };
 		F8FB3687219B50A3003E02B1 /* URLRequestUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FB3686219B50A3003E02B1 /* URLRequestUtilities.swift */; };
 		F8FB3689219B5C06003E02B1 /* NotificationCenterUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FB3688219B5C06003E02B1 /* NotificationCenterUtilities.swift */; };
@@ -77,6 +78,7 @@
 		F8CD2D37224CCDA400F01EDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F8CD2D39224CCDA400F01EDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F8CD2D3D224D21E300F01EDE /* ZAPStaticDemoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZAPStaticDemoController.swift; sourceTree = "<group>"; };
+		F8CD80B922B247250025B1A8 /* ZAPError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZAPError.swift; sourceTree = "<group>"; };
 		F8E32BAC22572D01000D51E5 /* DeviceUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceUtilities.swift; sourceTree = "<group>"; };
 		F8FB3686219B50A3003E02B1 /* URLRequestUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestUtilities.swift; sourceTree = "<group>"; };
 		F8FB3688219B5C06003E02B1 /* NotificationCenterUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenterUtilities.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				F8B53B03228933B8005BB95B /* URLSessionUtilities.swift */,
 				F8C2B34C2196E0C800D42440 /* URLUtilities.swift */,
 				F80A856121C50B1000B5771B /* WKWebViewUtilities.swift */,
+				F8CD80B922B247250025B1A8 /* ZAPError.swift */,
 				F8C2B35A2197042900D42440 /* ZAPStaticTableViewController.swift */,
 				F89D8CCC220EEF4800DE61CA /* ad_server_domains.txt */,
 			);
@@ -346,6 +349,7 @@
 				F8C2B3732198C50200D42440 /* DateUtilities.swift in Sources */,
 				F80A856221C50B1000B5771B /* WKWebViewUtilities.swift in Sources */,
 				F84C9D78227B34EF00ECAC0C /* URLResponseUtilities.swift in Sources */,
+				F8CD80BA22B247250025B1A8 /* ZAPError.swift in Sources */,
 				F80B9B6022A4ED1200E4EC88 /* UIImageUtilities.swift in Sources */,
 				F8C2B35B2197042900D42440 /* ZAPStaticTableViewController.swift in Sources */,
 			);

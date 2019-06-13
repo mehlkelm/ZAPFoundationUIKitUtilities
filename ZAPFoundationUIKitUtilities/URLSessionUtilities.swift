@@ -16,8 +16,12 @@ extension URLSession {
         }
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             DispatchQueue.main.async {
-                guard let data = data, let urlResponse = response as? HTTPURLResponse else {
+                guard let data = data else {
                     fail(NSError.invalidResponse)
+                    return
+                }
+                guard let urlResponse = response as? HTTPURLResponse else {
+                    fail(ZAPError(message: String(data: data, encoding: .utf8)))
                     return
                 }
                 if let error = error {
