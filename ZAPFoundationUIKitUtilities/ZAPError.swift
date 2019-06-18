@@ -8,9 +8,12 @@
 
 import Foundation
 
-struct ZAPError: Error {
-    var message: String?
-    var localizedDescription: String {
+public struct ZAPError: Error {
+    public var message: String?
+    public init(message: String?) {
+        self.message = message
+    }
+    public var localizedDescription: String {
         return message ?? "UNKNOWN ZAP ERROR!"
     }
 }
