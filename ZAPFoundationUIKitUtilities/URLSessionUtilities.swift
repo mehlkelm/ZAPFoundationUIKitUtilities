@@ -55,7 +55,7 @@ extension URLSession {
                 if let dict = jsonObject as? [kT: vT] {
                     completion(dict, response)
                 } else {
-                    fail(NSError.invalidResponse)
+                    fail(ZAPError(message: "Unexpected response: " + (String(data: data, encoding: .utf8) ?? "NOT DECODED")))
                 }
             } catch {
                 fail(error)
@@ -70,7 +70,7 @@ extension URLSession {
                 if let array = jsonObject as? [T] {
                     completion(array, response)
                 } else {
-                    fail(NSError.invalidResponse)
+                    fail(ZAPError(message: "Unexpected response: " + (String(data: data, encoding: .utf8) ?? "NOT DECODED")))
                 }
             } catch {
                 fail(error)
