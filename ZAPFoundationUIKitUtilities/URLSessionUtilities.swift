@@ -17,7 +17,7 @@ extension URLSession {
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             DispatchQueue.main.async {
                 guard let data = data else {
-                    fail(NSError.invalidResponse)
+                    fail(ZAPError(message: "NO DATA FOR RESPONSE " + (response?.description ?? "–")))
                     return
                 }
                 guard let urlResponse = response as? HTTPURLResponse else {
