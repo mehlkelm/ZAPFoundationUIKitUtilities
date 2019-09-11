@@ -41,6 +41,11 @@ extension String {
         return string1
     }
     
+    public func HTMLTagsRemoved() -> String {
+        let string1 = self.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
+        return string1
+    }
+    
     public func removingTooMuchWhiteSpace() -> String {
         let string1 = self.replacingOccurrences(of: "[\\s\\r\\n]*[\\r\\n]+[\\s\\r\\n]*", with: "\n", options: .regularExpression, range: self.startIndex..<self.endIndex)
         let string2 = string1.replacingOccurrences(of: "\\s{2,0}", with: " ", options: .regularExpression, range: string1.startIndex..<string1.endIndex)
