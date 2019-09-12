@@ -53,6 +53,14 @@ extension String {
         return string3
     }
     
+    public func trailingNewlineChopped() -> String {
+        if hasSuffix("\n") {
+            return String(dropLast())
+        } else {
+            return self
+        }
+    }
+    
     /// Adapted from here: https://stackoverflow.com/a/30141700/568157:
     /// Returns a new string made by replacing in the `String`
     /// all HTML character entity references with the corresponding
