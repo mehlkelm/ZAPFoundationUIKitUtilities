@@ -19,4 +19,16 @@ extension Array {
         let size: Int = Int(ceil(Double(count) / Double(number)))
         return chunks(with: size)
     }
+    
+    public func dividedInTwo(after number: Int) -> (batch: [Element], rest: [Element]) {
+        guard number > 0 else {
+            return ([], self)
+        }
+        guard number < count else {
+            return (self, [])
+        }
+        let batch = Array(self[0..<number])
+        let rest = Array(self[number..<count])
+        return (batch, rest)
+    }
 }
