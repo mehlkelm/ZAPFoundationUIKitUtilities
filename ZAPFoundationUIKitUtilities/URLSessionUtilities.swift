@@ -9,7 +9,7 @@
 import Foundation
 
 extension URLSession {
-    public func execute(request: URLRequest?, fail: @escaping (Error) -> Void, completion: ((Data, HTTPURLResponse) -> Void)? = nil) {
+    public func execute<T>(request: URLRequest?, fail: @escaping (Error) -> Void, completion: @escaping (T, HTTPURLResponse) -> Void) {
         guard let request = request else {
             fail(NSError.couldNotCreateRequest)
             return
@@ -43,39 +43,24 @@ extension URLSession {
                     fail(NSError.accessDenied)
                     return
                 }
-                completion?(data, urlResponse)
+                if T.self is Data.Type, let itsData = data as? T {
+                    completion(itsData, urlResponse)
+                    return
+                } else if T.self is String.Type, let text = String(data: data, encoding: .utf8) as? T {
+                    completion(text, urlResponse)
+                }
+                do {
+                    let jsonObject = try JSONSerialization.jsonObject(with: data, options: [])
+                    if let array = jsonObject as? T {
+                        completion(array, urlResponse)
+                    } else {
+                        fail(ZAPError(message: "Unexpected response: " + (String(data: data, encoding: .utf8) ?? "NOT DECODED")))
+                    }
+                } catch {
+                    fail(error)
+                }
             }
         }.resume()
-    }
-    
-    public func execute<kT, vT>(request: URLRequest?, fail: @escaping (Error) -> Void, completion: @escaping ([kT: vT], HTTPURLResponse) -> Void) {
-        execute(request: request, fail: fail) { (data: Data, response: HTTPURLResponse) in
-            do {
-                let jsonObject = try JSONSerialization.jsonObject(with: data, options: [])
-                if let dict = jsonObject as? [kT: vT] {
-                    completion(dict, response)
-                } else {
-                    fail(ZAPError(message: "Unexpected response: " + (String(data: data, encoding: .utf8) ?? "NOT DECODED")))
-                }
-            } catch {
-                fail(error)
-            }
-        }
-    }
-    
-    public func execute<T>(request: URLRequest?, fail: @escaping (Error) -> Void, completion: @escaping ([T], HTTPURLResponse) -> Void) {
-        execute(request: request, fail: fail) { (data: Data, response: HTTPURLResponse) in
-            do {
-                let jsonObject = try JSONSerialization.jsonObject(with: data, options: [])
-                if let array = jsonObject as? [T] {
-                    completion(array, response)
-                } else {
-                    fail(ZAPError(message: "Unexpected response: " + (String(data: data, encoding: .utf8) ?? "NOT DECODED")))
-                }
-            } catch {
-                fail(error)
-            }
-        }
     }
 }
 
