@@ -20,7 +20,7 @@ extension UIColor {
         return NSString(format:"#%06x", rgb) as String
     }
     
-    public static func *(left: UIColor, right: CGFloat) -> UIColor {
+    private static func *(left: UIColor, right: CGFloat) -> UIColor {
         var r:CGFloat = 0
         var g:CGFloat = 0
         var b:CGFloat = 0
