@@ -8,13 +8,13 @@
 import Foundation
 
 extension UITableView {
-    func registerNib<T: UITableViewCell>(for type: T.Type, bundle: Bundle? = nil) {
+    public func registerNib<T: UITableViewCell>(for type: T.Type, bundle: Bundle? = nil) {
         let className = String(describing: type)
         let nib = UINib(nibName: className, bundle: bundle)
         self.register(nib, forCellReuseIdentifier: className)
     }
     
-    func dequeueCell<T: UITableViewCell>(for type: T.Type, indexPath: IndexPath) -> T? {
+    public func dequeueCell<T: UITableViewCell>(for type: T.Type, indexPath: IndexPath) -> T? {
         let className = String(describing: type)
         let cell = self.dequeueReusableCell(withIdentifier: className, for: indexPath)
         return cell as? T
