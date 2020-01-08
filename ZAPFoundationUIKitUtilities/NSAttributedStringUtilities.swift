@@ -38,3 +38,17 @@ extension NSMutableAttributedString {
         self.addAttribute(.foregroundColor, value: color, range: NSRange(location: 0, length: self.length))
     }
 }
+
+extension String {
+    
+    public var attributedHTMLString: NSMutableAttributedString? {
+        let data = Data(self.utf8)
+        do {
+            let atString = try NSMutableAttributedString(data: data, options: [ NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.html, NSAttributedString.DocumentReadingOptionKey.characterEncoding: String.Encoding.utf8.rawValue], documentAttributes: nil)
+            return atString
+        } catch {
+            print(error)
+        }
+        return nil
+    }
+}
