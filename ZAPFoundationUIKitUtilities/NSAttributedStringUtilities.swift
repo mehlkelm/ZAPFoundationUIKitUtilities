@@ -9,20 +9,7 @@
 import Foundation
 
 extension NSAttributedString {
-    
-    @objc public convenience init?(HTMLString: String?, color: UIColor? = nil) {
-        guard let string = HTMLString else {
-            return nil
-        }
-        let data = Data(string.utf8)
-        if let color = color, let mutable = NSMutableAttributedString(HTMLString: HTMLString) {
-            mutable.setForegroundColor(color)
-            self.init(attributedString: mutable)
-        } else {
-            try? self.init(data: data, options: [ NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.html, NSAttributedString.DocumentReadingOptionKey.characterEncoding: String.Encoding.utf8.rawValue], documentAttributes: nil)
-        }
-    }
-    
+        
     @objc public func trailingNewlineChopped() -> NSAttributedString {
         if string.hasSuffix("\n") {
             return self.attributedSubstring(from: NSRange(location: 0, length: length - 1))
@@ -32,23 +19,44 @@ extension NSAttributedString {
     }
 }
 
-extension NSMutableAttributedString {
+extension NSString {
     
-    @objc public func setForegroundColor(_ color: UIColor) {
-        self.addAttribute(.foregroundColor, value: color, range: NSRange(location: 0, length: self.length))
+    @objc public func convertHTMLToAttributedString(color: UIColor? = nil) -> NSAttributedString? {
+        guard let data = self.data(using: String.Encoding.utf8.rawValue) else { return nil }
+        return data.convertHTMLToAttributedString(colored: color)
     }
 }
 
 extension String {
     
-    public var attributedHTMLString: NSMutableAttributedString? {
-        let data = Data(self.utf8)
+    public func convertHTMLToAttributedString(colored: UIColor? = nil) -> NSAttributedString? {
+        guard let data = self.data(using: String.Encoding.utf8) else { return nil }
+        return data.convertHTMLToAttributedString(colored: colored)
+    }
+}
+
+extension Data {
+    
+    public func convertHTMLToAttributedString(colored: UIColor? = nil) -> NSAttributedString? {
         do {
-            let atString = try NSMutableAttributedString(data: data, options: [ NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.html, NSAttributedString.DocumentReadingOptionKey.characterEncoding: String.Encoding.utf8.rawValue], documentAttributes: nil)
-            return atString
+            let mutableAS = try NSMutableAttributedString(data: self,
+                                                          options: [.documentType: NSAttributedString.DocumentType.html,
+                                                                    .characterEncoding: String.Encoding.utf8.rawValue],
+                                                          documentAttributes: nil)
+            if let color = colored {
+                mutableAS.setForegroundColor(color)
+            }
+            return NSAttributedString(attributedString: mutableAS)
         } catch {
             print(error)
+            return nil
         }
-        return nil
+    }
+}
+
+extension NSMutableAttributedString {
+    
+    @objc public func setForegroundColor(_ color: UIColor) {
+        self.addAttribute(.foregroundColor, value: color, range: NSRange(location: 0, length: self.length))
     }
 }
