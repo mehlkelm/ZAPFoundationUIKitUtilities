@@ -12,6 +12,7 @@
 		F80A856821C5B0F500B5771B /* UIBarButtonItemUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80A856721C5B0F500B5771B /* UIBarButtonItemUtilities.swift */; };
 		F80B9B6022A4ED1200E4EC88 /* UIImageUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80B9B5F22A4ED1200E4EC88 /* UIImageUtilities.swift */; };
 		F810493C21E6921F00CE6787 /* UIViewControllerUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F810493B21E6921F00CE6787 /* UIViewControllerUtilities.swift */; };
+		F82530892549C97F00810F6C /* DataUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82530882549C97F00810F6C /* DataUtilities.swift */; };
 		F83362CE238E519D00830DBE /* UITableViewUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83362CD238E519D00830DBE /* UITableViewUtilities.swift */; };
 		F84C9D78227B34EF00ECAC0C /* URLResponseUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84C9D77227B34EF00ECAC0C /* URLResponseUtilities.swift */; };
 		F88852FE22A904DD00B5BE6E /* UIButtonUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88852FD22A904DD00B5BE6E /* UIButtonUtilities.swift */; };
@@ -59,6 +60,7 @@
 		F80A856721C5B0F500B5771B /* UIBarButtonItemUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBarButtonItemUtilities.swift; sourceTree = "<group>"; };
 		F80B9B5F22A4ED1200E4EC88 /* UIImageUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageUtilities.swift; sourceTree = "<group>"; };
 		F810493B21E6921F00CE6787 /* UIViewControllerUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerUtilities.swift; sourceTree = "<group>"; };
+		F82530882549C97F00810F6C /* DataUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataUtilities.swift; sourceTree = "<group>"; };
 		F83362CD238E519D00830DBE /* UITableViewUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewUtilities.swift; sourceTree = "<group>"; };
 		F84C9D77227B34EF00ECAC0C /* URLResponseUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLResponseUtilities.swift; sourceTree = "<group>"; };
 		F88852FD22A904DD00B5BE6E /* UIButtonUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonUtilities.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				F8C2B3342196E02A00D42440 /* Info.plist */,
 				F8EC06242325181E00392801 /* ArrayUtilities.swift */,
 				F8C56CD521C26C7000F1921E /* BundleUtilities.swift */,
+				F82530882549C97F00810F6C /* DataUtilities.swift */,
 				F8C2B3722198C50200D42440 /* DateUtilities.swift */,
 				F8E32BAC22572D01000D51E5 /* DeviceUtilities.swift */,
 				F8FB3688219B5C06003E02B1 /* NotificationCenterUtilities.swift */,
@@ -353,6 +356,7 @@
 				F8C2B34F2196E0C900D42440 /* URLUtilities.swift in Sources */,
 				F8AC29B922AB1C92009E4D2E /* UIColorUtilities.swift in Sources */,
 				F8E32BAD22572D01000D51E5 /* DeviceUtilities.swift in Sources */,
+				F82530892549C97F00810F6C /* DataUtilities.swift in Sources */,
 				F88852FE22A904DD00B5BE6E /* UIButtonUtilities.swift in Sources */,
 				F8C2B34E2196E0C900D42440 /* NSRegularExpressionUtilities.swift in Sources */,
 				F83362CE238E519D00830DBE /* UITableViewUtilities.swift in Sources */,

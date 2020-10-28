@@ -18,4 +18,8 @@ extension UIImage {
         UIGraphicsEndImageContext()
         return image
     }
+    
+    public func base64String(withImageDataPrefix: Bool = false) -> String? {
+        return self.pngData()?.base64String(withImageDataPrefix: withImageDataPrefix)
+    }
 }
