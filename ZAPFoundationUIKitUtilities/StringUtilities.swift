@@ -10,6 +10,16 @@ import Foundation
 
 extension String {
     
+    // https://stackoverflow.com/a/43149500/568157
+    public var simpleHash: UInt64 {
+       var result = UInt64 (5381)
+       let buf = [UInt8](self.utf8)
+       for b in buf {
+           result = 127 * (result & 0x00ffffffffffffff) + UInt64(b)
+       }
+       return result
+    }
+
     public var isEmailAddress: Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
         let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
