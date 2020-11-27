@@ -8,11 +8,19 @@
 
 import Foundation
 
-public struct ZAPError: Error {
+public struct ZAPError: LocalizedError {
     public var message: String?
+    
     public init(message: String?) {
         self.message = message
     }
+    
+    public var errorDescription: String? {
+        get {
+            return message ?? "UNKNOWN ZAP ERROR!"
+        }
+    }
+    
     public var localizedDescription: String {
         return message ?? "UNKNOWN ZAP ERROR!"
     }
