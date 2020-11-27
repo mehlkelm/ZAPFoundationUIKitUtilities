@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIViewController {
-    @objc public func dismissAnimated() {
-        self.dismiss(animated: true, completion: nil)
+    @objc public func dismissAnimated(completion: (() -> Void)? = nil) {
+        self.dismiss(animated: true, completion: completion)
     }
 }
