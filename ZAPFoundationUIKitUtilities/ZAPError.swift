@@ -8,8 +8,14 @@
 
 import Foundation
 
-public struct ZAPError: LocalizedError {
+public struct ZAPError: LocalizedError, Identifiable {
+    public var id = UUID()
+    
     public var message: String?
+    
+    public init(error: Error?) {
+        self.init(message: error?.localizedDescription)
+    }
     
     public init(message: String?) {
         self.message = message
