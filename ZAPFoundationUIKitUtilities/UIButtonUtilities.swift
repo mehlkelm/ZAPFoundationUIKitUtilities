@@ -9,16 +9,7 @@
 import UIKit
 
 @IBDesignable extension UIButton {
-    
-    @IBInspectable var cornerRadius: CGFloat {
-        set {
-            layer.cornerRadius = newValue
-        }
-        get {
-            return layer.cornerRadius
-        }
-    }
-    
+        
     @IBInspectable var backgroundImageOfColor: UIColor? {
         set {
             // HACK: We need to save the background image color somewhere to be able to provide a getter. I figured I will never need a layer.borderColor when using a background color image and it will not be displayed unless layer.borderWidth > 0, so we just use layer.borderColor to save the color. 😬
