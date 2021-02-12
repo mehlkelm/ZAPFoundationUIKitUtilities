@@ -22,4 +22,13 @@ extension UIImage {
     public func base64String(withImageDataPrefix: Bool = false) -> String? {
         return self.pngData()?.base64String(withImageDataPrefix: withImageDataPrefix)
     }
+    
+    public func imageWithSize(newSize: CGSize) -> UIImage {
+        let renderer = UIGraphicsImageRenderer(size: newSize)
+        let image = renderer.image { _ in
+            self.draw(in: CGRect.init(origin: CGPoint.zero, size: newSize))
+        }
+
+        return image.withRenderingMode(self.renderingMode)
+    }
 }
