@@ -23,6 +23,9 @@
 		F8AC239623C23C1400820A53 /* UISplitViewControllerUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AC239523C23C1400820A53 /* UISplitViewControllerUtilities.swift */; };
 		F8AC29B922AB1C92009E4D2E /* UIColorUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AC29B822AB1C92009E4D2E /* UIColorUtilities.swift */; };
 		F8B215E921B959B3002B6210 /* NSAttributedStringUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B215E821B959B3002B6210 /* NSAttributedStringUtilities.swift */; };
+		F8B2B64C2677798C008A96C3 /* ZAPStoreCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B2B64B2677798C008A96C3 /* ZAPStoreCoordinator.swift */; };
+		F8B2B65B26777BE2008A96C3 /* KeychainAccess.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B2B65626777BB7008A96C3 /* KeychainAccess.framework */; };
+		F8B2B65C26777BE2008A96C3 /* KeychainAccess.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F8B2B65626777BB7008A96C3 /* KeychainAccess.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F8B53B04228933B8005BB95B /* URLSessionUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B53B03228933B8005BB95B /* URLSessionUtilities.swift */; };
 		F8C2B33A2196E02A00D42440 /* ZAPFoundationUIKitUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8C2B3302196E02A00D42440 /* ZAPFoundationUIKitUtilities.framework */; };
 		F8C2B33F2196E02A00D42440 /* ZAPFoundationUIKitUtilitiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C2B33E2196E02A00D42440 /* ZAPFoundationUIKitUtilitiesTests.swift */; };
@@ -47,6 +50,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		F8B2B65526777BB7008A96C3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F8B2B64F26777BB7008A96C3 /* KeychainAccess.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 140F195C1A49D79400B0016A;
+			remoteInfo = KeychainAccess;
+		};
+		F8B2B65726777BB7008A96C3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F8B2B64F26777BB7008A96C3 /* KeychainAccess.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 140F19671A49D79500B0016A;
+			remoteInfo = KeychainAccessTests;
+		};
+		F8B2B65926777BB7008A96C3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F8B2B64F26777BB7008A96C3 /* KeychainAccess.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 14A630151D3293C700809B3F;
+			remoteInfo = TestHost;
+		};
 		F8C2B33B2196E02A00D42440 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F8C2B3272196E02A00D42440 /* Project object */;
@@ -55,6 +79,20 @@
 			remoteInfo = ZAPFoundationUIKitUtilities;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F8B2B65D26777BE2008A96C3 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F8B2B65C26777BE2008A96C3 /* KeychainAccess.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		F805A069251E137900C33E52 /* ZAPCustomViewWithXib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZAPCustomViewWithXib.swift; sourceTree = "<group>"; };
@@ -73,6 +111,12 @@
 		F8AC239523C23C1400820A53 /* UISplitViewControllerUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISplitViewControllerUtilities.swift; sourceTree = "<group>"; };
 		F8AC29B822AB1C92009E4D2E /* UIColorUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorUtilities.swift; sourceTree = "<group>"; };
 		F8B215E821B959B3002B6210 /* NSAttributedStringUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSAttributedStringUtilities.swift; sourceTree = "<group>"; };
+		F8B2B64B2677798C008A96C3 /* ZAPStoreCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZAPStoreCoordinator.swift; sourceTree = "<group>"; };
+		F8B2B64F26777BB7008A96C3 /* KeychainAccess.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = KeychainAccess.xcodeproj; path = Submodules/KeychainAccess/Lib/KeychainAccess.xcodeproj; sourceTree = "<group>"; };
+		F8B2B663267780A8008A96C3 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
+		F8B2B664267780A8008A96C3 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		F8B2B669267780BA008A96C3 /* de */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = de; path = de.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F8B2B66A267780BB008A96C3 /* de */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = de; path = de.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F8B53B03228933B8005BB95B /* URLSessionUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionUtilities.swift; sourceTree = "<group>"; };
 		F8C2B3302196E02A00D42440 /* ZAPFoundationUIKitUtilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ZAPFoundationUIKitUtilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8C2B3332196E02A00D42440 /* ZAPFoundationUIKitUtilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZAPFoundationUIKitUtilities.h; sourceTree = "<group>"; };
@@ -88,9 +132,7 @@
 		F8C56CD521C26C7000F1921E /* BundleUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleUtilities.swift; sourceTree = "<group>"; };
 		F8CD2D2B224CCDA000F01EDE /* ZAPStaticTableViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZAPStaticTableViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8CD2D2D224CCDA000F01EDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F8CD2D32224CCDA000F01EDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F8CD2D34224CCDA400F01EDE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		F8CD2D37224CCDA400F01EDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F8CD2D39224CCDA400F01EDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F8CD2D3D224D21E300F01EDE /* ZAPStaticDemoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZAPStaticDemoController.swift; sourceTree = "<group>"; };
 		F8CD80B922B247250025B1A8 /* ZAPError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZAPError.swift; sourceTree = "<group>"; };
@@ -105,6 +147,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8B2B65B26777BE2008A96C3 /* KeychainAccess.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,9 +170,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F8B2B65026777BB7008A96C3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F8B2B65626777BB7008A96C3 /* KeychainAccess.framework */,
+				F8B2B65826777BB7008A96C3 /* KeychainAccessTests.xctest */,
+				F8B2B65A26777BB7008A96C3 /* TestHost.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		F8C2B3262196E02A00D42440 = {
 			isa = PBXGroup;
 			children = (
+				F8B2B64F26777BB7008A96C3 /* KeychainAccess.xcodeproj */,
 				F8C2B3322196E02A00D42440 /* ZAPFoundationUIKitUtilities */,
 				F8C2B33D2196E02A00D42440 /* ZAPFoundationUIKitUtilitiesTests */,
 				F8CD2D2C224CCDA000F01EDE /* ZAPStaticTableViewDemo */,
@@ -180,6 +234,7 @@
 				F8A3499F237E7D9800D6C5E2 /* ZAPClickableTableViewTextView.swift */,
 				F8CD80B922B247250025B1A8 /* ZAPError.swift */,
 				F8C2B35A2197042900D42440 /* ZAPStaticTableViewController.swift */,
+				F8B2B64B2677798C008A96C3 /* ZAPStoreCoordinator.swift */,
 				F89D8CCC220EEF4800DE61CA /* ad_server_domains.txt */,
 			);
 			path = ZAPFoundationUIKitUtilities;
@@ -236,6 +291,7 @@
 				F8C2B32C2196E02A00D42440 /* Sources */,
 				F8C2B32D2196E02A00D42440 /* Frameworks */,
 				F8C2B32E2196E02A00D42440 /* Resources */,
+				F8B2B65D26777BE2008A96C3 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -311,10 +367,17 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
 			);
 			mainGroup = F8C2B3262196E02A00D42440;
 			productRefGroup = F8C2B3312196E02A00D42440 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = F8B2B65026777BB7008A96C3 /* Products */;
+					ProjectRef = F8B2B64F26777BB7008A96C3 /* KeychainAccess.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				F8C2B32F2196E02A00D42440 /* ZAPFoundationUIKitUtilities */,
@@ -323,6 +386,30 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		F8B2B65626777BB7008A96C3 /* KeychainAccess.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = KeychainAccess.framework;
+			remoteRef = F8B2B65526777BB7008A96C3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F8B2B65826777BB7008A96C3 /* KeychainAccessTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = KeychainAccessTests.xctest;
+			remoteRef = F8B2B65726777BB7008A96C3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F8B2B65A26777BB7008A96C3 /* TestHost.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = TestHost.app;
+			remoteRef = F8B2B65926777BB7008A96C3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		F8C2B32E2196E02A00D42440 /* Resources */ = {
@@ -369,6 +456,7 @@
 				F83362CE238E519D00830DBE /* UITableViewUtilities.swift in Sources */,
 				F810493C21E6921F00CE6787 /* UIViewControllerUtilities.swift in Sources */,
 				F8FB3689219B5C06003E02B1 /* NotificationCenterUtilities.swift in Sources */,
+				F8B2B64C2677798C008A96C3 /* ZAPStoreCoordinator.swift in Sources */,
 				F8C56CD621C26C7000F1921E /* BundleUtilities.swift in Sources */,
 				F8B53B04228933B8005BB95B /* URLSessionUtilities.swift in Sources */,
 				F8FB3687219B50A3003E02B1 /* URLRequestUtilities.swift in Sources */,
@@ -418,7 +506,8 @@
 		F8CD2D31224CCDA000F01EDE /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				F8CD2D32224CCDA000F01EDE /* Base */,
+				F8B2B663267780A8008A96C3 /* de */,
+				F8B2B669267780BA008A96C3 /* de */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -426,7 +515,8 @@
 		F8CD2D36224CCDA400F01EDE /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				F8CD2D37224CCDA400F01EDE /* Base */,
+				F8B2B664267780A8008A96C3 /* de */,
+				F8B2B66A267780BB008A96C3 /* de */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
