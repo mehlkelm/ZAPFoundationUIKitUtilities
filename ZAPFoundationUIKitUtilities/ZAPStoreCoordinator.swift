@@ -8,15 +8,6 @@
 
 import Foundation
 import StoreKit
-import KeychainAccess
-
-enum ZAPStoreError: Error {
-    case productIdNotFound
-    case missingProductIDs
-    case unreadableProductIDs
-    case noRestorablePurchases
-    case transactionFailed
-}
 
 extension Notification.Name {
     public static let ProductAccessDidChange = Notification.Name("ProductAccessDidChange")
@@ -25,6 +16,7 @@ extension Notification.Name {
 open class ZAPStoreCoordinator: NSObject, SKPaymentTransactionObserver, SKProductsRequestDelegate {
     let keychain = Keychain()
     let productIDs = [String]()
+    public private(set) var errors = [Error]()
         
     private var productRequest: SKProductsRequest?
     public private(set) var products = [SKProduct]()
@@ -64,6 +56,7 @@ open class ZAPStoreCoordinator: NSObject, SKPaymentTransactionObserver, SKProduc
                 do {
                     try keychain.remove($0)
                 } catch {
+                    errors.append(error)
                     print(error)
                 }
             }
@@ -71,20 +64,7 @@ open class ZAPStoreCoordinator: NSObject, SKPaymentTransactionObserver, SKProduc
         
         validate(productIdentifiers: productIDs)
     }
-        
-    func loadPurchases() throws {
-        guard let url = Bundle.main.url(forResource: "IAPProductIDs", withExtension: "plist") else {
-            throw ZAPStoreError.missingProductIDs
-        }
-        let data = try Data(contentsOf: url)
-        let list = try PropertyListSerialization.propertyList(from: data, options: .mutableContainersAndLeaves, format: nil)
-        guard let productIdentifiers = list as? [String] else {
-            throw ZAPStoreError.unreadableProductIDs
-        }
-        
-        validate(productIdentifiers: productIdentifiers)
-    }
-    
+
     func validate(productIdentifiers: [String]) {
         let productIdentifiers = Set(productIdentifiers)
         productRequest = SKProductsRequest(productIdentifiers: productIdentifiers)
@@ -101,11 +81,13 @@ open class ZAPStoreCoordinator: NSObject, SKPaymentTransactionObserver, SKProduc
 
         for invalidIdentifier in response.invalidProductIdentifiers {
            // Handle any invalid product identifiers as appropriate.
+            errors.append(ZAPError(message: "Invalid product ID!"))
             print("Invalid product identifier: \(invalidIdentifier)")
         }
     }
     
     public func request(_ request: SKRequest, didFailWithError error: Error) {
+        errors.append(error)
         print(error)
     }
     
@@ -120,7 +102,7 @@ open class ZAPStoreCoordinator: NSObject, SKPaymentTransactionObserver, SKProduc
     
     public func buy(productID: String, completion: ((Result<SKPaymentTransaction?, Error>) -> Void)?) {
         guard let product = products.first(where: { $0.productIdentifier == productID }) else {
-            completion?(.failure(ZAPStoreError.productIdNotFound))
+            completion?(.failure(ZAPError(message: "Product ID not found!")))
             return
         }
         buy(product: product, completion: completion)
@@ -170,6 +152,7 @@ open class ZAPStoreCoordinator: NSObject, SKPaymentTransactionObserver, SKProduc
     
     /// Called when an error occur while restoring purchases. Notify the user about the error.
     public func paymentQueue(_ queue: SKPaymentQueue, restoreCompletedTransactionsFailedWithError error: Error) {
+        errors.append(error)
         if let error = error as? SKError, error.code != .paymentCancelled {
             DispatchQueue.main.async {
                 self.completionHandler?(.failure(error))
@@ -208,9 +191,12 @@ open class ZAPStoreCoordinator: NSObject, SKPaymentTransactionObserver, SKProduc
     /// Handles failed purchase transactions.
     fileprivate func handleFailed(_ transaction: SKPaymentTransaction) {
         // Do not send any notifications when the user cancels the purchase.
+        if let error = transaction.error {
+            errors.append(error)
+        }
         if (transaction.error as? SKError)?.code != .paymentCancelled {
             DispatchQueue.main.async {
-                self.completionHandler?(.failure(transaction.error ?? ZAPStoreError.transactionFailed))
+                self.completionHandler?(.failure(transaction.error ?? ZAPError(message: "Transaction failed!")))
                 self.completionHandler = nil
             }
         }
