@@ -39,6 +39,7 @@ extension Data {
     
     public func convertHTMLToAttributedString(colored: UIColor? = nil) -> NSAttributedString? {
         do {
+            // Intermittent crashes remain… see https://developer.apple.com/forums/thread/115405
             let mutableAS = try NSMutableAttributedString(data: self,
                                                           options: [.documentType: NSAttributedString.DocumentType.html,
                                                                     .characterEncoding: String.Encoding.utf8.rawValue],
