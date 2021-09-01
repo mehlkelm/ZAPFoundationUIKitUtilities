@@ -10,18 +10,24 @@ import Foundation
 import StoreKit
 
 extension Notification.Name {
+    
     public static let ProductAccessDidChange = Notification.Name("ProductAccessDidChange")
 }
 
 open class ZAPStoreCoordinator: NSObject, SKPaymentTransactionObserver, SKProductsRequestDelegate {
+    
     let keychain = Keychain()
+    
     let productIDs = [String]()
+    
     public private(set) var errors = [Error]()
         
     private var productRequest: SKProductsRequest?
+    
     public private(set) var products = [SKProduct]()
     
     public func productWith(ID: String) -> SKProduct? {
+        
         return products.first(where: { $0.productIdentifier == ID })
     }
 
@@ -66,6 +72,7 @@ open class ZAPStoreCoordinator: NSObject, SKPaymentTransactionObserver, SKProduc
     }
 
     func validate(productIdentifiers: [String]) {
+        
         let productIdentifiers = Set(productIdentifiers)
         productRequest = SKProductsRequest(productIdentifiers: productIdentifiers)
         productRequest?.delegate = self
@@ -73,6 +80,7 @@ open class ZAPStoreCoordinator: NSObject, SKPaymentTransactionObserver, SKProduc
     }
     
     public func productsRequest(_ request: SKProductsRequest, didReceive response: SKProductsResponse) {
+        
         if !response.products.isEmpty {
            products = response.products
            // Custom method.
@@ -87,6 +95,7 @@ open class ZAPStoreCoordinator: NSObject, SKPaymentTransactionObserver, SKProduc
     }
     
     public func request(_ request: SKRequest, didFailWithError error: Error) {
+        
         errors.append(error)
         print(error)
     }
@@ -95,12 +104,14 @@ open class ZAPStoreCoordinator: NSObject, SKPaymentTransactionObserver, SKProduc
     
     /// Create and add a payment request to the payment queue.
     public func buy(product: SKProduct, completion: ((Result<SKPaymentTransaction?, Error>) -> Void)?) {
+        
         self.completionHandler = completion
         let payment = SKMutablePayment(product: product)
         SKPaymentQueue.default().add(payment)
     }
     
     public func buy(productID: String, completion: ((Result<SKPaymentTransaction?, Error>) -> Void)?) {
+        
         guard let product = products.first(where: { $0.productIdentifier == productID }) else {
             completion?(.failure(ZAPError(message: "Product ID not found!")))
             return
@@ -112,6 +123,7 @@ open class ZAPStoreCoordinator: NSObject, SKPaymentTransactionObserver, SKProduc
     
     /// Restores all previously completed purchases.
     public func restore(completion: ((Result<SKPaymentTransaction?, Error>) -> Void)?) {
+        
         self.completionHandler = completion
         if !restored.isEmpty {
             restored.removeAll()
@@ -122,6 +134,7 @@ open class ZAPStoreCoordinator: NSObject, SKPaymentTransactionObserver, SKProduc
     // MARK: - SKPaymentTransactionObserver
     
     public func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
+        
         for transaction in transactions {
             switch transaction.transactionState {
             case .purchasing:
@@ -145,6 +158,7 @@ open class ZAPStoreCoordinator: NSObject, SKPaymentTransactionObserver, SKProduc
     
     /// Logs all transactions that have been removed from the payment queue.
     public func paymentQueue(_ queue: SKPaymentQueue, removedTransactions transactions: [SKPaymentTransaction]) {
+        
         for transaction in transactions {
             print("\(transaction.payment.productIdentifier) processed.")
         }
@@ -152,6 +166,7 @@ open class ZAPStoreCoordinator: NSObject, SKPaymentTransactionObserver, SKProduc
     
     /// Called when an error occur while restoring purchases. Notify the user about the error.
     public func paymentQueue(_ queue: SKPaymentQueue, restoreCompletedTransactionsFailedWithError error: Error) {
+        
         errors.append(error)
         if let error = error as? SKError, error.code != .paymentCancelled {
             DispatchQueue.main.async {
@@ -163,6 +178,7 @@ open class ZAPStoreCoordinator: NSObject, SKPaymentTransactionObserver, SKProduc
     
     /// Called when all restorable transactions have been processed by the payment queue.
     public func paymentQueueRestoreCompletedTransactionsFinished(_ queue: SKPaymentQueue) {
+        
         print("All restorable transactions have been processed by the payment queue.")
         
         DispatchQueue.main.async {
@@ -175,6 +191,7 @@ open class ZAPStoreCoordinator: NSObject, SKPaymentTransactionObserver, SKProduc
     
     /// Handles successful purchase transactions.
     fileprivate func handlePurchased(_ transaction: SKPaymentTransaction) {
+        
         let id = transaction.payment.productIdentifier
         keychain[id] = String(id.simpleHash)
         
@@ -190,6 +207,7 @@ open class ZAPStoreCoordinator: NSObject, SKPaymentTransactionObserver, SKProduc
     
     /// Handles failed purchase transactions.
     fileprivate func handleFailed(_ transaction: SKPaymentTransaction) {
+        
         // Do not send any notifications when the user cancels the purchase.
         if let error = transaction.error {
             errors.append(error)
@@ -206,18 +224,22 @@ open class ZAPStoreCoordinator: NSObject, SKPaymentTransactionObserver, SKProduc
     
     /// Handles restored purchase transactions.
     fileprivate func handleRestored(_ transaction: SKPaymentTransaction) {
+        
         print("Restore content for \(transaction.payment.productIdentifier).")
         hasRestorablePurchases = true
         handlePurchased(transaction)
     }
 
     public func hasPersonAccessToProduct(with ID: String) -> Bool {
+        
         let entry = keychain[ID]
         let check = entry == String(ID.simpleHash)
         return check
     }
     
     let lastLaunchedBuildKey = "lastLaunchedBuild"
+    
     var lastLaunchedBuild: Int
+    
     var currentBuild: Int?
 }

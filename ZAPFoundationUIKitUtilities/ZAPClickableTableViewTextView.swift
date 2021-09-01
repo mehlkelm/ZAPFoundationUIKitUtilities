@@ -13,6 +13,7 @@ public class ZAPClickableTableViewTextView: UITextView, UITextViewDelegate {
     /* https://medium.com/@sdrzn/swifty-approach-to-handling-uitextviews-with-links-in-cells-d89e0e4b83d1 */
     
     override public func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        
         // location of the tap
         var location = point
         location.x -= self.textContainerInset.left

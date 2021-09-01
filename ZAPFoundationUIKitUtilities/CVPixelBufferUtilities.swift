@@ -29,6 +29,7 @@ import UIKit
  Creates a RGB pixel buffer of the specified width and height.
  */
 public func createPixelBuffer(width: Int, height: Int) -> CVPixelBuffer? {
+    
     var pixelBuffer: CVPixelBuffer?
     let status = CVPixelBufferCreate(nil, width, height,
                                      kCVPixelFormatType_32BGRA, nil,
@@ -106,6 +107,7 @@ public func resizePixelBuffer(_ srcPixelBuffer: CVPixelBuffer,
  */
 public func resizePixelBuffer(_ pixelBuffer: CVPixelBuffer,
                               width: Int, height: Int) -> CVPixelBuffer? {
+    
     return resizePixelBuffer(pixelBuffer, cropX: 0, cropY: 0,
                              cropWidth: CVPixelBufferGetWidth(pixelBuffer),
                              cropHeight: CVPixelBufferGetHeight(pixelBuffer),
@@ -118,6 +120,7 @@ public func resizePixelBuffer(_ pixelBuffer: CVPixelBuffer,
 public func resizePixelBuffer(_ pixelBuffer: CVPixelBuffer,
                               width: Int, height: Int,
                               output: CVPixelBuffer, context: CIContext) {
+    
     let ciImage = CIImage(cvPixelBuffer: pixelBuffer)
     let sx = CGFloat(width) / CGFloat(CVPixelBufferGetWidth(pixelBuffer))
     let sy = CGFloat(height) / CGFloat(CVPixelBufferGetHeight(pixelBuffer))
@@ -129,7 +132,6 @@ public func resizePixelBuffer(_ pixelBuffer: CVPixelBuffer,
 public func pixelBufferFromImage(image: UIImage) -> CVPixelBuffer {
     
     //    let newImage = resize(image: image, newSize: CGSize(width: 224/3.0, height: 224/3.0))
-    
     let ciimage = CIImage(image: image)
     let tmpcontext = CIContext(options: nil)
     let cgimage =  tmpcontext.createCGImage(ciimage!, from: ciimage!.extent)
@@ -167,8 +169,6 @@ public func pixelBufferFromImage(image: UIImage) -> CVPixelBuffer {
                             bitmapInfo: CGImageAlphaInfo.premultipliedFirst.rawValue | CGBitmapInfo.byteOrder32Little.rawValue)
     context?.concatenate(CGAffineTransform(rotationAngle: 0))
     //    context?.concatenate(__CGAffineTransformMake( 1, 0, 0, -1, 0, CGFloat(height) )) //Flip Vertical
-    
-    
     
     context?.draw(cgimage!, in: CGRect(x:0, y:0, width:CGFloat(width), height:CGFloat(height)))
     status = CVPixelBufferUnlockBaseAddress(pxbuffer!, CVPixelBufferLockFlags(rawValue: 0))

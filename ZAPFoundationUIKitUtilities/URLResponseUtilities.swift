@@ -11,6 +11,7 @@ import Foundation
 extension URLResponse {
     
     public var textEncoding: String.Encoding {
+        
         var encoding = String.Encoding.utf8
         if let encodingName = self.textEncodingName {
             let CFEncoding = CFStringConvertIANACharSetNameToEncoding(encodingName as CFString)

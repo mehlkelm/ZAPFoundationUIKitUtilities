@@ -9,7 +9,9 @@
 import Foundation
 
 extension UIColor {
+    
     public var css: String {
+        
         var r:CGFloat = 0
         var g:CGFloat = 0
         var b:CGFloat = 0
@@ -21,6 +23,7 @@ extension UIColor {
     }
     
     private static func *(left: UIColor, right: CGFloat) -> UIColor {
+        
         var r:CGFloat = 0
         var g:CGFloat = 0
         var b:CGFloat = 0

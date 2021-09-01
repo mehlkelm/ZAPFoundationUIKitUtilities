@@ -9,6 +9,7 @@
 import Foundation
 
 public enum ContentType {
+    
     case JSON
     case formURLEncoded
     case none
@@ -26,11 +27,14 @@ public enum ContentType {
 }
 
 extension URLRequest {
+    
     public mutating func setContent(type: ContentType) {
+        
         setValue(type.value, forHTTPHeaderField: "Content-Type")
     }
     
     public mutating func setJSONBody(object: Any) {
+        
         do {
             self.httpBody = try JSONSerialization.data(withJSONObject: object, options: [])
             self.setContent(type: .JSON)
@@ -41,6 +45,7 @@ extension URLRequest {
     }
     
     public mutating func setURLEncodedFormString(string: String) {
+        
         self.httpBody = string.data(using: .utf8)
         self.setContent(type: .formURLEncoded)
         self.httpMethod = "POST"

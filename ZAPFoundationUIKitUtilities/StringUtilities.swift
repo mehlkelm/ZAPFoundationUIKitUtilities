@@ -12,6 +12,7 @@ extension String {
     
     // https://stackoverflow.com/a/43149500/568157
     public var simpleHash: UInt64 {
+        
        var result = UInt64 (5381)
        let buf = [UInt8](self.utf8)
        for b in buf {
@@ -21,42 +22,51 @@ extension String {
     }
 
     public var isEmailAddress: Bool {
+        
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
         let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
         return emailTest.evaluate(with: self)
     }
     
     public func URLEncoded() -> String {
+        
         return addingPercentEncoding(withAllowedCharacters: CharacterSet.alphanumerics) ?? self as String
     }
     
     public func URLPathEncoded() -> String {
+        
         return addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? self as String
     }
     
     public func URLQueryEncoded() -> String {
+        
         return addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? self as String
     }
     
     public func URLFragmentEncoded() -> String {
+        
         return addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed) ?? self as String
     }
     
     public func URLHostEncoded() -> String {
+        
         return addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? self as String
     }
         
     public func imgTagsRemoved() -> String {
+        
         let string1 = self.replacingOccurrences(of: "(<p>)?<img[^>]*>(</p>)?", with: "", options: .regularExpression, range: self.startIndex..<self.endIndex)
         return string1
     }
     
     public func HTMLTagsRemoved() -> String {
+        
         let string1 = self.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
         return string1
     }
     
     public func removingTooMuchWhiteSpace() -> String {
+        
         let string1 = self.replacingOccurrences(of: "[\\s\\r\\n]*[\\r\\n]+[\\s\\r\\n]*", with: "\n", options: .regularExpression, range: self.startIndex..<self.endIndex)
         let string2 = string1.replacingOccurrences(of: "\\s{2,0}", with: " ", options: .regularExpression, range: string1.startIndex..<string1.endIndex)
         let string3 = string2.replacingOccurrences(of: "(^\\s+)|(\\s+$)", with: "", options: .regularExpression, range: string2.startIndex..<string2.endIndex)
@@ -64,6 +74,7 @@ extension String {
     }
     
     public func trailingNewlineChopped() -> String {
+        
         if hasSuffix("\n") {
             return String(dropLast())
         } else {

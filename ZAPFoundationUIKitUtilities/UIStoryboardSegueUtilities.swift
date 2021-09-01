@@ -9,7 +9,9 @@
 import Foundation
 
 extension UIStoryboardSegue {
+    
     public func findDestinationViewController<T>(ofType: T.Type) -> T? {
+        
         if let t = destination as? T {
             return t
         }

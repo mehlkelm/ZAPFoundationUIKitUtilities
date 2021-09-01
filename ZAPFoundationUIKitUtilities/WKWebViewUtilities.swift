@@ -10,7 +10,9 @@ import Foundation
 import WebKit
 
 extension WKWebView {
+    
     public func loadHTMLRessource(name filename: String, bundle: Bundle = Bundle.main) {
+        
         let base = URL(fileURLWithPath:Bundle.main.bundlePath, isDirectory: true)
         if let path = bundle.path(forResource: filename, ofType: "html"),
             let content = try? String(contentsOfFile: path) {

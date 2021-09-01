@@ -9,7 +9,9 @@
 import Foundation
 
 extension UIDevice {
+    
     public var isSimulator: Bool {
+        
         var isSim = false
         #if arch(i386) || arch(x86_64)
         isSim = true
@@ -18,10 +20,12 @@ extension UIDevice {
     }
     
     @objc public var isPhone: Bool {
+        
         return self.userInterfaceIdiom == .phone
     }
     
     public var isTablet: Bool {
+        
         return self.userInterfaceIdiom == .pad
     }
 }

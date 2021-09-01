@@ -9,7 +9,9 @@
 import Foundation
 
 extension URLSession {
+    
     public func execute<T>(request: URLRequest?, fail: @escaping (Error) -> Void, completion: @escaping (T, HTTPURLResponse) -> Void) {
+        
         guard let request = request else {
             fail(NSError.couldNotCreateRequest)
             return
@@ -65,6 +67,7 @@ extension URLSession {
 }
 
 extension NSError {
+    
     public static let internalError = NSError(domain: "ZAPURLSession", code: 0, userInfo: [NSLocalizedDescriptionKey: "Internal account error!"])
     public static let couldNotCreateRequest = NSError(domain: "ZAPURLSession", code: 2, userInfo: [NSLocalizedDescriptionKey: "Could not create request!"])
     public static let accessDenied = NSError(domain: "ZAPURLSession", code: 3, userInfo: [NSLocalizedDescriptionKey: "Access denied!"])

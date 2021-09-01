@@ -36,6 +36,7 @@ extension URL {
     }
     
     public init?(HTTPURLWith string: String, relativeTo baseURL: URL?) {
+        
         var correctedString = string
         let parts = string.components(separatedBy: "://")
         if parts[0] != "https" {
@@ -45,10 +46,12 @@ extension URL {
     }
     
     public init?(HTTPURLWith string: String) {
+        
         self.init(HTTPURLWith: string, relativeTo: nil)
     }
     
     public func queryValue(forKey key: String) -> String? {
+        
         let components = URLComponents(url: self, resolvingAgainstBaseURL: false)
         for item in components?.queryItems ?? [URLQueryItem]() {
             if item.name == key {

@@ -9,11 +9,13 @@
 import UIKit
 
 public struct Section {
+    
     public var headerTitle: String?
     public var footerTitle: String?
     public var rows = [Row]()
     
     public init(rows: [Row], headerTitle header: String? = nil, footerTitle footer: String? = nil) {
+        
         self.rows = rows
         headerTitle = header
         footerTitle = footer
@@ -21,6 +23,7 @@ public struct Section {
 }
 
 public struct Row {
+    
     public var cell: ((IndexPath) -> (UITableViewCell))
     public var selectionAction: ((IndexPath) -> (Void))?
     public var shouldHighlight: Bool = true
@@ -61,6 +64,7 @@ public struct Row {
 }
 
 public class ZAPStaticTableViewDataSource: NSObject, UITableViewDataSource {
+    
     public var sections = [Section]()
     
     public func row(for indexPath: IndexPath) -> Row {

@@ -9,7 +9,9 @@
 import Foundation
 
 extension Data {
+    
     public func base64String(withImageDataPrefix: Bool = false) -> String {
+        
         let base64 = self.base64EncodedString()
         let string = withImageDataPrefix ? "data:image/png;base64," : ""
         return string + base64

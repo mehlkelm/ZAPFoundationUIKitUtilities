@@ -9,11 +9,14 @@
 import UIKit
 
 extension Notification.Name {
+    
     public static let ZAPError: NSNotification.Name = Notification.Name("ZAPError")
 }
 
 extension NotificationCenter {
+    
     public func postZAPError(object: Any?, title: String?, description: String) {
+        
         var info = [AnyHashable: Any]()
         info["description"] = description
         info["title"] = title
@@ -26,6 +29,7 @@ extension NotificationCenter {
     }
     
     public func postZAPError(object: Any?, title: String?, error: Error) {
+        
         postZAPError(object: object, title: title, description: error.localizedDescription)
     }
 }
