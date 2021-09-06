@@ -43,6 +43,7 @@ open class ZAPStoreCoordinator: NSObject, SKPaymentTransactionObserver, SKProduc
     var completionHandler: ((Result<SKPaymentTransaction?, Error>) -> Void)?
 
     public init(productIDs: [String], keychain: Keychain = Keychain()) {
+        
         lastLaunchedBuild = UserDefaults.standard.integer(forKey: lastLaunchedBuildKey)
 
         if let currentBuildString = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String , let currentBuildNumber = Int(currentBuildString) {
@@ -239,7 +240,7 @@ open class ZAPStoreCoordinator: NSObject, SKPaymentTransactionObserver, SKProduc
     
     let lastLaunchedBuildKey = "lastLaunchedBuild"
     
-    var lastLaunchedBuild: Int
+    private(set) public var lastLaunchedBuild: Int
     
-    var currentBuild: Int?
+    private(set) public var currentBuild: Int?
 }
