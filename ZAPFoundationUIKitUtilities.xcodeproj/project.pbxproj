@@ -42,7 +42,7 @@
 		F8CD2D3E224D21E300F01EDE /* ZAPStaticDemoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CD2D3D224D21E300F01EDE /* ZAPStaticDemoController.swift */; };
 		F8CD2D40224D22A800F01EDE /* ZAPFoundationUIKitUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8C2B3302196E02A00D42440 /* ZAPFoundationUIKitUtilities.framework */; };
 		F8CD80BA22B247250025B1A8 /* ZAPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CD80B922B247250025B1A8 /* ZAPError.swift */; };
-		F8D2850626789E560065D469 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D2850526789E560065D469 /* Keychain.swift */; };
+		F8D2850626789E560065D469 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D2850526789E560065D469 /* Keychain.swift */; settings = {COMPILER_FLAGS = "-w"; }; };
 		F8E32BAD22572D01000D51E5 /* DeviceUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E32BAC22572D01000D51E5 /* DeviceUtilities.swift */; };
 		F8EC06252325181E00392801 /* ArrayUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8EC06242325181E00392801 /* ArrayUtilities.swift */; };
 		F8FB3687219B50A3003E02B1 /* URLRequestUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FB3686219B50A3003E02B1 /* URLRequestUtilities.swift */; };
