@@ -15,6 +15,7 @@
 		F817E6AC25B6CD4100DF8EE5 /* UIViewUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F817E6AB25B6CD4100DF8EE5 /* UIViewUtilities.swift */; };
 		F81C34F7268F026C00D0FF9B /* CVPixelBufferUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81C34F6268F026C00D0FF9B /* CVPixelBufferUtilities.swift */; };
 		F82530892549C97F00810F6C /* DataUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82530882549C97F00810F6C /* DataUtilities.swift */; };
+		F82A966F274D1CC300016848 /* FileManagerUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82A966E274D1CC300016848 /* FileManagerUtilities.swift */; };
 		F83362CE238E519D00830DBE /* UITableViewUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83362CD238E519D00830DBE /* UITableViewUtilities.swift */; };
 		F841C33E264919E5001DF01B /* UIStoryboardSegueUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F841C33D264919E5001DF01B /* UIStoryboardSegueUtilities.swift */; };
 		F84C9D78227B34EF00ECAC0C /* URLResponseUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84C9D77227B34EF00ECAC0C /* URLResponseUtilities.swift */; };
@@ -81,6 +82,7 @@
 		F817E6AB25B6CD4100DF8EE5 /* UIViewUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewUtilities.swift; sourceTree = "<group>"; };
 		F81C34F6268F026C00D0FF9B /* CVPixelBufferUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CVPixelBufferUtilities.swift; sourceTree = "<group>"; };
 		F82530882549C97F00810F6C /* DataUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataUtilities.swift; sourceTree = "<group>"; };
+		F82A966E274D1CC300016848 /* FileManagerUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerUtilities.swift; sourceTree = "<group>"; };
 		F83362CD238E519D00830DBE /* UITableViewUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewUtilities.swift; sourceTree = "<group>"; };
 		F841C33D264919E5001DF01B /* UIStoryboardSegueUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboardSegueUtilities.swift; sourceTree = "<group>"; };
 		F84C9D77227B34EF00ECAC0C /* URLResponseUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLResponseUtilities.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 				F82530882549C97F00810F6C /* DataUtilities.swift */,
 				F8C2B3722198C50200D42440 /* DateUtilities.swift */,
 				F8E32BAC22572D01000D51E5 /* DeviceUtilities.swift */,
+				F82A966E274D1CC300016848 /* FileManagerUtilities.swift */,
 				F8F92245272007FE0076B564 /* Keychain.swift */,
 				F8FB3688219B5C06003E02B1 /* NotificationCenterUtilities.swift */,
 				F8B215E821B959B3002B6210 /* NSAttributedStringUtilities.swift */,
@@ -400,6 +403,7 @@
 				F8B53B04228933B8005BB95B /* URLSessionUtilities.swift in Sources */,
 				F81C34F7268F026C00D0FF9B /* CVPixelBufferUtilities.swift in Sources */,
 				F8FB3687219B50A3003E02B1 /* URLRequestUtilities.swift in Sources */,
+				F82A966F274D1CC300016848 /* FileManagerUtilities.swift in Sources */,
 				F805A06A251E137900C33E52 /* ZAPCustomViewWithXib.swift in Sources */,
 				F80A856821C5B0F500B5771B /* UIBarButtonItemUtilities.swift in Sources */,
 				F8C2B34D2196E0C900D42440 /* StringUtilities.swift in Sources */,
