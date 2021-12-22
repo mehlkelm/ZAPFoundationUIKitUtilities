@@ -35,4 +35,12 @@ extension Array {
         let rest = Array(self[number..<count])
         return (batch, rest)
     }
+    
+    public func element(at index: Int) -> Element? {
+        
+        if count > index {
+            return self[index]
+        }
+        return nil
+    }
 }
