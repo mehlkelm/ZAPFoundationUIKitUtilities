@@ -8,15 +8,20 @@
 
 import UIKit
 
-@IBDesignable extension UIButton {
+extension UIView {
     
-    @IBInspectable var cornerRadius: CGFloat {
+    public static func instatiate<T: UIView>(type: T) -> T {
         
-        set {
-            layer.cornerRadius = newValue
-        }
-        get {
-            return layer.cornerRadius
-        }
+        let bundle = Bundle(for: T.self)
+        let views = bundle.loadNibNamed(String(describing: T.self), owner: nil, options: nil)
+        let view = views?.first as! T
+        return view
+    }
+
+    public static func instatiate(nibName: String) -> UIView {
+        
+        let views = Bundle.main.loadNibNamed(nibName, owner: nil, options: nil)
+        let view = views?.first as! UIView
+        return view
     }
 }
