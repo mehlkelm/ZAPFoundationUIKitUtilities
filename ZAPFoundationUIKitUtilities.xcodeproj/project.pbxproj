@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F805A06A251E137900C33E52 /* ZAPCustomViewWithXib.swift in Sources */ = {isa = PBXBuildFile; fileRef = F805A069251E137900C33E52 /* ZAPCustomViewWithXib.swift */; };
 		F80A856221C50B1000B5771B /* WKWebViewUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80A856121C50B1000B5771B /* WKWebViewUtilities.swift */; };
 		F80A856821C5B0F500B5771B /* UIBarButtonItemUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80A856721C5B0F500B5771B /* UIBarButtonItemUtilities.swift */; };
 		F80B9B6022A4ED1200E4EC88 /* UIImageUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F80B9B5F22A4ED1200E4EC88 /* UIImageUtilities.swift */; };
@@ -74,7 +73,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		F805A069251E137900C33E52 /* ZAPCustomViewWithXib.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZAPCustomViewWithXib.swift; sourceTree = "<group>"; };
 		F80A856121C50B1000B5771B /* WKWebViewUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKWebViewUtilities.swift; sourceTree = "<group>"; };
 		F80A856721C5B0F500B5771B /* UIBarButtonItemUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBarButtonItemUtilities.swift; sourceTree = "<group>"; };
 		F80B9B5F22A4ED1200E4EC88 /* UIImageUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageUtilities.swift; sourceTree = "<group>"; };
@@ -202,7 +200,6 @@
 				F8B53B03228933B8005BB95B /* URLSessionUtilities.swift */,
 				F8C2B34C2196E0C800D42440 /* URLUtilities.swift */,
 				F80A856121C50B1000B5771B /* WKWebViewUtilities.swift */,
-				F805A069251E137900C33E52 /* ZAPCustomViewWithXib.swift */,
 				F8A3499F237E7D9800D6C5E2 /* ZAPClickableTableViewTextView.swift */,
 				F8CD80B922B247250025B1A8 /* ZAPError.swift */,
 				F8C2B35A2197042900D42440 /* ZAPStaticTableViewController.swift */,
@@ -404,7 +401,6 @@
 				F81C34F7268F026C00D0FF9B /* CVPixelBufferUtilities.swift in Sources */,
 				F8FB3687219B50A3003E02B1 /* URLRequestUtilities.swift in Sources */,
 				F82A966F274D1CC300016848 /* FileManagerUtilities.swift in Sources */,
-				F805A06A251E137900C33E52 /* ZAPCustomViewWithXib.swift in Sources */,
 				F80A856821C5B0F500B5771B /* UIBarButtonItemUtilities.swift in Sources */,
 				F8C2B34D2196E0C900D42440 /* StringUtilities.swift in Sources */,
 				F8C2B3732198C50200D42440 /* DateUtilities.swift in Sources */,
