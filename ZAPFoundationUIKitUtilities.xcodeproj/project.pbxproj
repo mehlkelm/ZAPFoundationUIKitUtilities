@@ -18,6 +18,7 @@
 		F83362CE238E519D00830DBE /* UITableViewUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83362CD238E519D00830DBE /* UITableViewUtilities.swift */; };
 		F841C33E264919E5001DF01B /* UIStoryboardSegueUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F841C33D264919E5001DF01B /* UIStoryboardSegueUtilities.swift */; };
 		F84C9D78227B34EF00ECAC0C /* URLResponseUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F84C9D77227B34EF00ECAC0C /* URLResponseUtilities.swift */; };
+		F8703DF528042AF400B23263 /* NetworkCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8703DF428042AF400B23263 /* NetworkCheck.swift */; };
 		F88852FE22A904DD00B5BE6E /* UIButtonUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F88852FD22A904DD00B5BE6E /* UIButtonUtilities.swift */; };
 		F89D8CCD220EEF4800DE61CA /* ad_server_domains.txt in Resources */ = {isa = PBXBuildFile; fileRef = F89D8CCC220EEF4800DE61CA /* ad_server_domains.txt */; };
 		F8A349A0237E7D9800D6C5E2 /* ZAPClickableTableViewTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A3499F237E7D9800D6C5E2 /* ZAPClickableTableViewTextView.swift */; };
@@ -84,6 +85,7 @@
 		F83362CD238E519D00830DBE /* UITableViewUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewUtilities.swift; sourceTree = "<group>"; };
 		F841C33D264919E5001DF01B /* UIStoryboardSegueUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboardSegueUtilities.swift; sourceTree = "<group>"; };
 		F84C9D77227B34EF00ECAC0C /* URLResponseUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLResponseUtilities.swift; sourceTree = "<group>"; };
+		F8703DF428042AF400B23263 /* NetworkCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCheck.swift; sourceTree = "<group>"; };
 		F88852FD22A904DD00B5BE6E /* UIButtonUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonUtilities.swift; sourceTree = "<group>"; };
 		F89D8CCC220EEF4800DE61CA /* ad_server_domains.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ad_server_domains.txt; sourceTree = "<group>"; };
 		F8A3499F237E7D9800D6C5E2 /* ZAPClickableTableViewTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZAPClickableTableViewTextView.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 				F8E32BAC22572D01000D51E5 /* DeviceUtilities.swift */,
 				F82A966E274D1CC300016848 /* FileManagerUtilities.swift */,
 				F8F92245272007FE0076B564 /* Keychain.swift */,
+				F8703DF428042AF400B23263 /* NetworkCheck.swift */,
 				F8FB3688219B5C06003E02B1 /* NotificationCenterUtilities.swift */,
 				F8B215E821B959B3002B6210 /* NSAttributedStringUtilities.swift */,
 				F8C2B34B2196E0C800D42440 /* NSRegularExpressionUtilities.swift */,
@@ -413,6 +416,7 @@
 				F80B9B6022A4ED1200E4EC88 /* UIImageUtilities.swift in Sources */,
 				F8C2B35B2197042900D42440 /* ZAPStaticTableViewController.swift in Sources */,
 				F8F92246272007FE0076B564 /* Keychain.swift in Sources */,
+				F8703DF528042AF400B23263 /* NetworkCheck.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
