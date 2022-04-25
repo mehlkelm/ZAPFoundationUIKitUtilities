@@ -10,6 +10,12 @@ import Foundation
 
 extension String {
     
+    public func matches(regex pattern: String) -> Bool {
+        
+        let match = range(of: pattern, options: .regularExpression, range: nil, locale: nil)
+        return match != nil
+    }
+    
     // https://stackoverflow.com/a/43149500/568157
     public var simpleHash: UInt64 {
         
