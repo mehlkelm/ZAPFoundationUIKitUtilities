@@ -29,13 +29,13 @@
 		F8B53B04228933B8005BB95B /* URLSessionUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B53B03228933B8005BB95B /* URLSessionUtilities.swift */; };
 		F8C2B33A2196E02A00D42440 /* ZAPFoundationUIKitUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8C2B3302196E02A00D42440 /* ZAPFoundationUIKitUtilities.framework */; };
 		F8C2B33F2196E02A00D42440 /* ZAPFoundationUIKitUtilitiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C2B33E2196E02A00D42440 /* ZAPFoundationUIKitUtilitiesTests.swift */; };
-		F8C2B3412196E02A00D42440 /* ZAPFoundationUIKitUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = F8C2B3332196E02A00D42440 /* ZAPFoundationUIKitUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F8C2B34D2196E0C900D42440 /* StringUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C2B34A2196E0C800D42440 /* StringUtilities.swift */; };
 		F8C2B34E2196E0C900D42440 /* NSRegularExpressionUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C2B34B2196E0C800D42440 /* NSRegularExpressionUtilities.swift */; };
 		F8C2B34F2196E0C900D42440 /* URLUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C2B34C2196E0C800D42440 /* URLUtilities.swift */; };
 		F8C2B35B2197042900D42440 /* ZAPStaticTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C2B35A2197042900D42440 /* ZAPStaticTableViewController.swift */; };
 		F8C2B3732198C50200D42440 /* DateUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C2B3722198C50200D42440 /* DateUtilities.swift */; };
 		F8C56CD621C26C7000F1921E /* BundleUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C56CD521C26C7000F1921E /* BundleUtilities.swift */; };
+		F8C90071298D3D4C00317D64 /* ZAPStore2Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8C90070298D3D4C00317D64 /* ZAPStore2Coordinator.swift */; };
 		F8CD2D2E224CCDA000F01EDE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CD2D2D224CCDA000F01EDE /* AppDelegate.swift */; };
 		F8CD2D33224CCDA000F01EDE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8CD2D31224CCDA000F01EDE /* Main.storyboard */; };
 		F8CD2D35224CCDA400F01EDE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8CD2D34224CCDA400F01EDE /* Assets.xcassets */; };
@@ -99,7 +99,6 @@
 		F8B2B66A267780BB008A96C3 /* de */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = de; path = de.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F8B53B03228933B8005BB95B /* URLSessionUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionUtilities.swift; sourceTree = "<group>"; };
 		F8C2B3302196E02A00D42440 /* ZAPFoundationUIKitUtilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ZAPFoundationUIKitUtilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F8C2B3332196E02A00D42440 /* ZAPFoundationUIKitUtilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZAPFoundationUIKitUtilities.h; sourceTree = "<group>"; };
 		F8C2B3342196E02A00D42440 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F8C2B3392196E02A00D42440 /* ZAPFoundationUIKitUtilitiesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZAPFoundationUIKitUtilitiesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8C2B33E2196E02A00D42440 /* ZAPFoundationUIKitUtilitiesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZAPFoundationUIKitUtilitiesTests.swift; sourceTree = "<group>"; };
@@ -110,6 +109,7 @@
 		F8C2B35A2197042900D42440 /* ZAPStaticTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZAPStaticTableViewController.swift; sourceTree = "<group>"; };
 		F8C2B3722198C50200D42440 /* DateUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtilities.swift; sourceTree = "<group>"; };
 		F8C56CD521C26C7000F1921E /* BundleUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleUtilities.swift; sourceTree = "<group>"; };
+		F8C90070298D3D4C00317D64 /* ZAPStore2Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZAPStore2Coordinator.swift; sourceTree = "<group>"; };
 		F8CD2D2B224CCDA000F01EDE /* ZAPStaticTableViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZAPStaticTableViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8CD2D2D224CCDA000F01EDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8CD2D34224CCDA400F01EDE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -174,7 +174,6 @@
 		F8C2B3322196E02A00D42440 /* ZAPFoundationUIKitUtilities */ = {
 			isa = PBXGroup;
 			children = (
-				F8C2B3332196E02A00D42440 /* ZAPFoundationUIKitUtilities.h */,
 				F8C2B3342196E02A00D42440 /* Info.plist */,
 				F8EC06242325181E00392801 /* ArrayUtilities.swift */,
 				F8C56CD521C26C7000F1921E /* BundleUtilities.swift */,
@@ -207,6 +206,7 @@
 				F8CD80B922B247250025B1A8 /* ZAPError.swift */,
 				F8C2B35A2197042900D42440 /* ZAPStaticTableViewController.swift */,
 				F8B2B64B2677798C008A96C3 /* ZAPStoreCoordinator.swift */,
+				F8C90070298D3D4C00317D64 /* ZAPStore2Coordinator.swift */,
 				F89D8CCC220EEF4800DE61CA /* ad_server_domains.txt */,
 			);
 			path = ZAPFoundationUIKitUtilities;
@@ -248,7 +248,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8C2B3412196E02A00D42440 /* ZAPFoundationUIKitUtilities.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,6 +406,7 @@
 				F80A856821C5B0F500B5771B /* UIBarButtonItemUtilities.swift in Sources */,
 				F8C2B34D2196E0C900D42440 /* StringUtilities.swift in Sources */,
 				F8C2B3732198C50200D42440 /* DateUtilities.swift in Sources */,
+				F8C90071298D3D4C00317D64 /* ZAPStore2Coordinator.swift in Sources */,
 				F8EC06252325181E00392801 /* ArrayUtilities.swift in Sources */,
 				F817E6AC25B6CD4100DF8EE5 /* UIViewUtilities.swift in Sources */,
 				F80A856221C50B1000B5771B /* WKWebViewUtilities.swift in Sources */,
@@ -609,7 +609,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = ZAPFoundationUIKitUtilities/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -638,7 +638,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = ZAPFoundationUIKitUtilities/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

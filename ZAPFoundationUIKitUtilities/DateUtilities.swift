@@ -8,23 +8,23 @@
 
 import Foundation
 
-extension Date {
+public extension Date {
     
-    public static func daysAgo(_ days: Double) -> Date {
+    static func daysAgo(_ days: Double) -> Date {
         
         return Date(timeIntervalSinceNow: -days * TimeInterval.day)
     }
     
-    public static func daysAgo(_ days: Int) -> Date {
+    static func daysAgo(_ days: Int) -> Date {
         
         return daysAgo(Double(days))
     }
 }
 
-extension TimeInterval {
+public extension TimeInterval {
     
-    public static var day: TimeInterval = 24 * 60 * 60
-    public static var week: TimeInterval = day * 7
-    public static var month: TimeInterval = day * 30
-    public static var year: TimeInterval = day * 365
+    static var day: TimeInterval = 24 * 60 * 60
+    static var week: TimeInterval = day * 7
+    static var month: TimeInterval = day * 30
+    static var year: TimeInterval = day * 365
 }

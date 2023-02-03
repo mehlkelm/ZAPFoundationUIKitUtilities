@@ -14,6 +14,7 @@ extension Notification.Name {
     public static let ProductAccessDidChange = Notification.Name("ProductAccessDidChange")
 }
 
+@available(iOS, deprecated: 15.0, message: "Use ZAPStore2Coordinator which uses StoreKit2 APIs.")
 open class ZAPStoreCoordinator: NSObject, SKPaymentTransactionObserver, SKProductsRequestDelegate {
     
     let keychain = Keychain()
