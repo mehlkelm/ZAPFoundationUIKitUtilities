@@ -7,7 +7,7 @@ public enum StoreError: Error {
 }
 
 @available(iOS 15.0, *)
-public class ZAPStore2Coordinator: ObservableObject {
+open class ZAPStore2Coordinator: ObservableObject {
 		
 	typealias RenewalInfo = StoreKit.Product.SubscriptionInfo.RenewalInfo
 	
@@ -46,7 +46,7 @@ public class ZAPStore2Coordinator: ObservableObject {
         }
     }
     
-    func startListeningForTransactions() {
+    public func startListeningForTransactions() {
         
         //Start a transaction listener as close to app launch as possible so you don't miss any transactions.
         if updateListenerTask == nil {
@@ -120,7 +120,7 @@ public class ZAPStore2Coordinator: ObservableObject {
         }
     }
     
-    func purchase(productID: String) async throws -> Transaction? {
+    public func purchase(productID: String) async throws -> Transaction? {
         
         if let product = product(for: productID) {
             return try await purchase(product)
@@ -128,7 +128,7 @@ public class ZAPStore2Coordinator: ObservableObject {
         return nil
     }
     
-    func product(for identifier: String) -> Product? {
+    public func product(for identifier: String) -> Product? {
         
         for group in [nonconsumables, consumables, autoRenewableSubs, nonRenewingSubs] {
             if let product = group.first(where: { $0.id == identifier }) {
@@ -139,7 +139,7 @@ public class ZAPStore2Coordinator: ObservableObject {
         return nil
     }
 
-    func purchase(_ product: Product) async throws -> Transaction? {
+    public func purchase(_ product: Product) async throws -> Transaction? {
         
         //Begin a purchase.
         let result = try await product.purchase()
