@@ -4,6 +4,7 @@ import StoreKit
 public enum StoreError: Error {
 
     case failedVerification
+	case noSuchProduct
 }
 
 @available(iOS 15.0, *)
@@ -125,7 +126,7 @@ open class ZAPStore2Coordinator: ObservableObject {
         if let product = product(for: productID) {
             return try await purchase(product)
         }
-        return nil
+		throw StoreError.noSuchProduct
     }
     
     public func product(for identifier: String) -> Product? {
