@@ -218,6 +218,8 @@ open class ZAPStore2Coordinator: ObservableObject {
             //If the App Store has revoked this transaction, remove it from the list of `purchasedIdentifiers`.
             purchasedIdentifiers.remove(transaction.productID)
         }
+		
+		NotificationCenter.default.post(name: .ProductAccessDidChange, object: self)
     }
 
     func sortByPrice(_ products: [Product]) -> [Product] {
