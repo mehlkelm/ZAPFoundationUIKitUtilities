@@ -165,7 +165,7 @@ open class ZAPStore2Coordinator: ObservableObject {
         }
     }
 
-    public func isPurchased(_ productIdentifier: String) async -> Result<Transaction, Error> {
+    public func purchaseTransactionForProduct(_ productIdentifier: String) async -> Result<Transaction, Error> {
         
         guard let result = await Transaction.latest(for: productIdentifier) else {
             return .failure(ZAPError(message: "Product has not been purchased."))
