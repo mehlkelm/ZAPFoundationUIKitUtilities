@@ -23,6 +23,7 @@ public extension Date {
 
 public extension TimeInterval {
     
+	static var minute: TimeInterval = 60
     static var day: TimeInterval = 24 * 60 * 60
     static var week: TimeInterval = day * 7
     static var month: TimeInterval = day * 30
