@@ -176,6 +176,11 @@ open class ZAPStore2Coordinator: ObservableObject {
             let purchasedSince = Date().timeIntervalSince(transaction.purchaseDate)
             
             if transaction.productType == .nonRenewable {
+				#if DEBUG
+				if purchasedSince > TimeInterval.minute {
+					return .failure(ZAPError(message: "Non renewable sandbox subscription has expired."))
+				}
+				#endif
                 if productIdentifier.hasSuffix(".year") && purchasedSince > TimeInterval.year {
                     return .failure(ZAPError(message: "Non renewable yearly subscription has expired."))
                 }
