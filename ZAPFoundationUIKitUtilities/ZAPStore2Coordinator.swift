@@ -5,6 +5,16 @@ public enum StoreError: Error {
 
     case failedVerification
 	case noSuchProduct
+	
+	var localizedDescription: String {
+		
+		switch self {
+			case .failedVerification:
+				return "Transaction verification failed"
+			case .noSuchProduct:
+				return "Product unavailable"
+		}
+	}
 }
 
 @available(iOS 15.0, *)
@@ -231,4 +241,13 @@ open class ZAPStore2Coordinator: ObservableObject {
         
         products.sorted(by: { return $0.price < $1.price })
     }
+	
+	open func sync() async {
+		
+		do {
+			try await AppStore.sync()
+		} catch {
+			print(error)
+		}
+	}
 }
