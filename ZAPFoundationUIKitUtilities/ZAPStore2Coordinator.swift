@@ -25,17 +25,17 @@ open class ZAPStore2Coordinator: ObservableObject {
 	typealias RenewalState = StoreKit.Product.SubscriptionInfo.RenewalState
 
         
-    @Published private(set) var nonconsumables: [Product]
+    @Published private(set) public var nonconsumables: [Product]
     
-    @Published private(set) var consumables: [Product]
+    @Published private(set) public var consumables: [Product]
     
-    @Published private(set) var autoRenewableSubs: [Product]
+    @Published private(set) public var autoRenewableSubs: [Product]
     
-    @Published private(set) var nonRenewingSubs: [Product]
+    @Published private(set) public var nonRenewingSubs: [Product]
     
-    @Published private(set) var productIdentifiers = [String]()
+    @Published private(set) public var productIdentifiers = [String]()
     
-    @Published private(set) var purchasedIdentifiers = Set<String>()
+    @Published private(set) public var purchasedIdentifiers = Set<String>()
 
     var updateListenerTask: Task<Void, Error>? = nil
         
