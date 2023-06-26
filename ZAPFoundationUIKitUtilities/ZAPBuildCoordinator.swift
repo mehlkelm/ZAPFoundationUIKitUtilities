@@ -1,6 +1,5 @@
 //
 //  BuildCoordinator.swift
-//  StrokesIn
 //
 //  Created by Stefan Pauwels on 20.04.22.
 //  Copyright © 2022 Zozi Apps. All rights reserved.
