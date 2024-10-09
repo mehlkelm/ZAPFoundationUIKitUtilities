@@ -176,12 +176,16 @@ open class ZAPStore2Coordinator: ObservableObject {
     }
 
     public func purchaseTransactionForProduct(_ productIdentifier: String) async -> Result<Transaction, Error> {
-        
-        guard let result = await Transaction.latest(for: productIdentifier) else {
-            return .failure(ZAPError(message: "Product has not been purchased."))
-        }
-
+		
         do {
+			guard let product = try await Product.products(for: [productIdentifier]).first else {
+				return .failure(ZAPError(message: "Product not found."))
+			}
+			
+			guard let result = await product.currentEntitlement else {
+				return .failure(ZAPError(message: "Product has not been purchased."))
+			}
+			
             let transaction = try checkVerified(result)
             let purchasedSince = Date().timeIntervalSince(transaction.purchaseDate)
             
@@ -197,7 +201,7 @@ open class ZAPStore2Coordinator: ObservableObject {
                 if productIdentifier.hasSuffix(".month") && purchasedSince > TimeInterval.month {
                     return .failure(ZAPError(message: "Non renewable monthly subscription has expired."))
                 }
-            }
+			}
             
             //Ignore revoked transactions, they're no longer purchased.
             if transaction.revocationDate != nil {
