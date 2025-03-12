@@ -50,16 +50,20 @@ extension URLSession {
                     return
                 } else if T.self is String.Type, let text = String(data: data, encoding: .utf8) as? T {
                     completion(text, urlResponse)
+					return
                 }
                 do {
                     let jsonObject = try JSONSerialization.jsonObject(with: data, options: [])
                     if let array = jsonObject as? T {
                         completion(array, urlResponse)
+						return
                     } else {
                         fail(ZAPError(message: "Unexpected response: " + (String(data: data, encoding: .utf8) ?? "NOT DECODED")))
+						return
                     }
                 } catch {
                     fail(error)
+					return
                 }
             }
         }.resume()
