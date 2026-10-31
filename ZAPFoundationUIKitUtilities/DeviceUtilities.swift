@@ -10,7 +10,14 @@ import Foundation
 import UIKit
 
 extension UIDevice {
-        
+    public var isSimulator: Bool {
+        var isSim = false
+        #if targetEnvironment(simulator)
+        isSim = true
+        #endif
+        return isSim
+    }
+    
     @objc public var isPhone: Bool {
         
         return self.userInterfaceIdiom == .phone
