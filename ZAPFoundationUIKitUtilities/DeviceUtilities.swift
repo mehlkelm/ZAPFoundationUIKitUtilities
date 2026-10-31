@@ -11,7 +11,7 @@ import Foundation
 extension UIDevice {
     public var isSimulator: Bool {
         var isSim = false
-        #if arch(i386) || arch(x86_64)
+        #if targetEnvironment(simulator)
         isSim = true
         #endif
         return isSim
